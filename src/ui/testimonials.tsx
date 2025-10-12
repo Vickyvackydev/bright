@@ -1,4 +1,3 @@
-import React from "react";
 import { BUTTON, JOHNSON, QUOTE, STAR_ICON } from "../assets";
 
 function Testimonials() {

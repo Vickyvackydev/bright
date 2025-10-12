@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BLACK_ARROW_RIGHT, BRIGHTY_2, PLUS_ICON, MINUS_ICON } from "../assets";
 
 const myFaqs = [

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   BLACK_BG,
   FRAME_1_PIC,

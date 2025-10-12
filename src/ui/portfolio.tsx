@@ -1,14 +1,10 @@
-import React from "react";
 import {
-  BOTTOM,
   BOTTOM_1,
   BOTTOM_2,
   BRIGHT_1_PIC,
   BRIGHT_2_PIC,
-  BRIGHT_3_PIC,
   BRIGHT_4_PIC,
   BRIGHT_5_PIC,
-  BRIGHT_6_PIC,
   GROUP,
   HERO_IMAGE_5,
 } from "../assets";

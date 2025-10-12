@@ -1,4 +1,3 @@
-import React from "react";
 import { HERO_IMAGE_4, HERO_IMAGE_2, LINE_BAR } from "../assets";
 import { GO_BACK } from "../assets";
 import { useNavigate } from "react-router-dom";
