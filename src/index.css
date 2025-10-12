@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@100..900&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import "tailwindcss";
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+@theme {
+  --font-inter: Inter, "sans-serif";
+  --font-instrument-serif: Instrument Serif, "sans-serif";
+  --font-anton: Anton, "sans-serif";
+  --font-geist: Geist, "sans-serif";
+  --color-anton-gray: #676767;
+  --color-inter-gray: #606060;
+  --color-lighter-gray: #1e1e1e;
+  --color-custom-black: #111111;
+  --color-custom: #c8d3cc;
+  --color-gray-bgrd: #38383b;
+  --color-black-bgrd: #202020;
+  --shadow-box-shadow: 0px 0px 0px 1px #ff45331f;
+}
+
+@layer utilities {
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 25s linear infinite;
+  }
+
+  .animate-scroll-right {
+    animation: scroll-right 35s linear infinite;
+  }
+
+  .scroll-hover-pause:hover {
+    animation-play-state: paused;
+  }
+}
+
+.screen {
+  max-width: 1280px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(39, 37, 86);
+
+  /* border-radius: 50px; */
+}
+
+@media (max-width: 840px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
