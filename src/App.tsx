@@ -16,7 +16,7 @@ import Myosin from "./pages/myosin";
 
 function App() {
   const location = useLocation();
-  const { pathname } = location;
+  // const { pathname } = location;
 
   // useEffect(() => {
   //   if (pathname === "/") {
