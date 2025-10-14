@@ -61,7 +61,7 @@ function Service() {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
   return (
-    <div className="w-full relative min-h-[2000px] lg:h-[900px] md:h-auto sm:h-auto flex flex-col">
+    <div className="w-full relative min-h-[2000px] 2xl:min-h-[900px] xl:min-h-[950px] lg:min-h-[900px] md:h-auto sm:h-auto flex flex-col">
       <img
         src={BLACK_BG}
         className="w-full h-full object-cover absolute inset-0"

@@ -4,6 +4,7 @@ import {
   BRIGHT_MIC,
   BRIGHTY,
   BRIGHTY_2,
+  CLOCK,
   GIRLIE,
   GROUP,
   GROUP_PHOTOS,
@@ -169,19 +170,35 @@ function Trust() {
               className="w-full h-[180px] sm:h-[270px] object-cover rounded-2xl"
               alt=""
             />
-            <div className="w-full h-full relative rounded-2xl mt-3 overflow-hidden">
+            <div className="w-full h-full lg:h-[190px] xl:h-[190px] relative rounded-2xl mt-3 overflow-hidden">
+              {/* Background Image */}
               <img
                 src={GIRLIE}
                 className="absolute inset-0 w-full h-full object-cover object-center rounded-2xl"
                 alt=""
               />
+
+              {/* Gradient Overlay */}
               <div
-                className="absolute inset-0 w-full h-full rounded-2xl"
+                className="absolute inset-0 w-full h-full rounded-2xl z-10"
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.24) 100%)",
                 }}
               />
+
+              {/* Text Overlay */}
+              <div className="absolute flex flex-col items-start gap-y-1 inset-0 mt-16 z-20 px-6">
+                <div className="flex items-center gap-x-2">
+                  <img src={CLOCK} className="w-[19px] h-[19px]" alt="" />
+                  <span className="text-white text-xl font-medium">
+                    Quick, effective strategies
+                  </span>
+                </div>
+                <span className="text-sm font-medium text-[#FFFFFFBF]">
+                  turning crypto buzz into <br /> measurable growth.
+                </span>
+              </div>
             </div>
           </div>
         </motion.div>

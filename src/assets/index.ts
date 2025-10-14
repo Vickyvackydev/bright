@@ -79,5 +79,6 @@ export { default as MYOSIN_2 } from "./images/myosin-2.png";
 export { default as MYOSIN_3 } from "./images/myosin-3.jpg";
 export { default as MYOSIN_4 } from "./images/myosin-4.jpg";
 export { default as MYOSIN_5 } from "./images/myosin-5.png";
+export { default as CLOCK } from "./images/Image.svg";
 
 // new sets ends here
