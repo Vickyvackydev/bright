@@ -15,15 +15,30 @@ import Portfolio from "../ui/portfolio";
 import Trust from "../ui/trust";
 import Testimonials from "../ui/testimonials";
 import Faqs from "../ui/faqs";
+import { motion } from "framer-motion";
 
 function Home() {
   return (
     <div className="font-inter">
       <Hero />
       <div className="w-full ">
-        <img src={MEASURE_MASK} className="w-full h-full" alt="" />
+        <motion.img
+          src={MEASURE_MASK}
+          className="w-full h-full"
+          alt=""
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        />
 
-        <div className="w-full px-10 flex flex-col items-start mt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full px-10 flex flex-col items-start mt-16"
+        >
           <div className="w-full flex items-center justify-between">
             <img src={STAR} className="w-[30px] h-[30px]" alt="" />
             <div className="flex items-start gap-x-2">
@@ -38,8 +53,14 @@ function Home() {
             blockchain a human heartbeat, turning ideas into movements with
             lasting impact.
           </span>
-        </div>
-        <div className="w-full flex items-center justify-between gap-3 px-10 mt-16 mb-20">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full flex lg:flex-row flex-col items-center justify-between gap-3 lg:px-10 px-5  mt-16 mb-20"
+        >
           <div className="flex items-start flex-col gap-y-3 w-full">
             <div className="w-full border flex items-center justify-between border-[#B8C2CC] rounded-xl px-4 py-3">
               <div className="flex items-center gap-x-2">
@@ -82,7 +103,7 @@ function Home() {
               <span className="text-sm text-[#11111299]">Reach</span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <Service />
       <Portfolio />

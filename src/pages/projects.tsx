@@ -71,17 +71,21 @@ function Projects() {
           onClick={() => navigate("/chain-industry")}
           className="w-full h-[500px] cursor-pointer rounded-2xl relative z-10 shadow-2xl"
         >
-          <div className="absolute inset-0 z-30 flex flex-col items-center gap-y-2 mt-[15rem] ml-[5rem]">
-            <div className="flex items-center gap-x-10 ">
-              <span className="text-white text-4xl font-medium">
+          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[15rem] ml-4 sm:ml-[5rem]">
+            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
                 Oct 9, 2024
               </span>
-              <img src={LINE_BAR} className="h-[31.5px]" alt="" />
-              <span className="text-[#FFFFFFB8] text-lg">
+              <img
+                src={LINE_BAR}
+                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
+                alt=""
+              />
+              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
                 Content Marketing
               </span>
             </div>
-            <span className="text-white text-5xl font-medium">
+            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
               ChainDustry Blockchain Week 2025
             </span>
           </div>
@@ -99,17 +103,21 @@ function Projects() {
               : "opacity-0 transform translate-y-8"
           }`}
         >
-          <div className="absolute inset-0 z-30 flex flex-col items-center gap-y-2 mt-[13rem]">
-            <div className="flex items-center gap-x-10 ">
-              <span className="text-white text-4xl font-medium">
+          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
+            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
                 Oct 9, 2024
               </span>
-              <img src={LINE_BAR} className="h-[31.5px]" alt="" />
-              <span className="text-[#FFFFFFB8] text-lg">
+              <img
+                src={LINE_BAR}
+                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
+                alt=""
+              />
+              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
                 Content Marketing
               </span>
             </div>
-            <span className="text-white text-5xl font-medium">
+            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
               BingX Exchange
             </span>
           </div>
@@ -127,17 +135,23 @@ function Projects() {
               : "opacity-0 transform translate-y-8"
           }`}
         >
-          <div className="absolute inset-0 z-30 flex flex-col items-center gap-y-2 mt-[13rem]">
-            <div className="flex items-center gap-x-10 ">
-              <span className="text-white text-4xl font-medium">
+          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
+            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
                 Oct 9, 2024
               </span>
-              <img src={LINE_BAR} className="h-[31.5px]" alt="" />
-              <span className="text-[#FFFFFFB8] text-lg">
+              <img
+                src={LINE_BAR}
+                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
+                alt=""
+              />
+              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
                 Content Marketing
               </span>
             </div>
-            <span className="text-white text-5xl font-medium">Myosin</span>
+            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
+              Myosin
+            </span>
           </div>
           <img
             src={HERO_IMAGE_3}
@@ -153,17 +167,21 @@ function Projects() {
               : "opacity-0 transform translate-y-8"
           }`}
         >
-          <div className="absolute inset-0 z-30 flex flex-col items-center gap-y-2 mt-[13rem]">
-            <div className="flex items-center gap-x-10 ">
-              <span className="text-white text-4xl font-medium">
+          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
+            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
                 Oct 9, 2024
               </span>
-              <img src={LINE_BAR} className="h-[31.5px]" alt="" />
-              <span className="text-[#FFFFFFB8] text-lg">
+              <img
+                src={LINE_BAR}
+                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
+                alt=""
+              />
+              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
                 Content Marketing
               </span>
             </div>
-            <span className="text-white text-5xl font-medium">
+            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
               vTrader Global & vTrader Africa
             </span>
           </div>
@@ -181,17 +199,21 @@ function Projects() {
               : "opacity-0 transform translate-y-8"
           }`}
         >
-          <div className="absolute inset-0 z-30 flex flex-col items-center gap-y-2 mt-[13rem]">
-            <div className="flex items-center gap-x-10 ">
-              <span className="text-white text-4xl font-medium">
+          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
+            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
                 Oct 9, 2024
               </span>
-              <img src={LINE_BAR} className="h-[31.5px]" alt="" />
-              <span className="text-[#FFFFFFB8] text-lg">
+              <img
+                src={LINE_BAR}
+                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
+                alt=""
+              />
+              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
                 Content Marketing
               </span>
             </div>
-            <span className="text-white text-5xl font-medium">
+            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
               Infinity Exchange
             </span>
           </div>
@@ -210,17 +232,21 @@ function Projects() {
               : "opacity-0 transform translate-y-8"
           }`}
         >
-          <div className="absolute inset-0 z-30 flex flex-col items-center gap-y-2 mt-[13rem]">
-            <div className="flex items-center gap-x-10 ">
-              <span className="text-white text-4xl font-medium">
+          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
+            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
+              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
                 Oct 9, 2024
               </span>
-              <img src={LINE_BAR} className="h-[31.5px]" alt="" />
-              <span className="text-[#FFFFFFB8] text-lg">
+              <img
+                src={LINE_BAR}
+                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
+                alt=""
+              />
+              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
                 Content Marketing
               </span>
             </div>
-            <span className="text-white text-5xl font-medium">
+            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
               Pvzzle Collection
             </span>
           </div>
