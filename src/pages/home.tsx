@@ -37,18 +37,22 @@ function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="w-full px-10 flex flex-col items-start mt-16"
+          className="w-full lg:px-10 px-5 flex flex-col items-start lg:mt-16 mt-8"
         >
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex lg:flex-row flex-col lg:items-center items-start justify-between">
             <img src={STAR} className="w-[30px] h-[30px]" alt="" />
-            <div className="flex items-start gap-x-2">
-              <img src={QUOTE} className="w-[30px] h-[30px] mt-3" alt="" />
-              <span className="text-[#111112] text-[52px] font-medium tracking-tighter">
+            <div className="flex lg:items-start items-center gap-x-2 lg:mt-0 mt-5">
+              <img
+                src={QUOTE}
+                className="w-[30px] h-[30px] lg:mt-3 mt-0"
+                alt=""
+              />
+              <span className="text-[#111112] lg:text-[52px] text-2xl font-medium tracking-tighter">
                 I don’t just market projects.
               </span>
             </div>
           </div>
-          <span className="text-[#111112] text-[50px] font-medium tracking-tighter leading-[50px]">
+          <span className="text-[#111112] lg:text-[50px] text-3xl font-medium tracking-tighter lg:leading-[50px] leading-normal lg:mt-0 mt-5">
             I build communities, design experiences, and craft stories that give
             blockchain a human heartbeat, turning ideas into movements with
             lasting impact.
@@ -62,7 +66,7 @@ function Home() {
           className="w-full flex lg:flex-row flex-col items-center justify-between gap-3 lg:px-10 px-5  mt-16 mb-20"
         >
           <div className="flex items-start flex-col gap-y-3 w-full">
-            <div className="w-full border flex items-center justify-between border-[#B8C2CC] rounded-xl px-4 py-3">
+            <div className="w-full border flex lg:flex-row flex-col  lg:items-center items-end justify-between border-[#B8C2CC] rounded-xl px-4 py-3">
               <div className="flex items-center gap-x-2">
                 <img
                   src={FIRST_IMAGE}

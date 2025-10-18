@@ -4,29 +4,30 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const myFaqs = [
   {
-    question: "How far in advance should I book?",
+    question: "What kind of projects do you work with?",
     answer:
-      "To ensure availability, it’s ideal to book 3-6 months in advance, especially during peak seasons like weddings or holiday events. However, if your date is flexible, feel free to inquire anytime—I’ll do my best to accommodate last-minute requests.",
+      "I work with crypto/fintech startups, exchanges, DAOs, NFT projects, Layer-1/Layer-2 ecosystems, and blockchain events that want growth, community and real adoption.",
   },
   {
-    question: "What’s your turnaround time?",
+    question:
+      "Do you only do marketing or can you help with full strategy and launch?",
     answer:
-      "To ensure availability, it’s ideal to book 3-6 months in advance, especially during peak seasons like weddings or holiday events. However, if your date is flexible, feel free to inquire anytime—I’ll do my best to accommodate last-minute requests.",
+      "Both. I provide end-to-end support — from pre-launch strategy and positioning to social growth, storytelling, partnerships, and community activation.",
   },
   {
-    question: "How long will it take to receive my photos?",
+    question: "Can you help build and manage a community from zero?",
     answer:
-      "To ensure availability, it’s ideal to book 3-6 months in advance, especially during peak seasons like weddings or holiday events. However, if your date is flexible, feel free to inquire anytime—I’ll do my best to accommodate last-minute requests.",
+      "Yes. I handle strategy, engagement frameworks, recruitment of moderators, onboarding systems, and long-term community culture building both online and offline.",
   },
   {
-    question: "How much does it cost?",
+    question: "Do you work on long-term retainers or short launch campaigns?",
     answer:
-      "To ensure availability, it’s ideal to book 3-6 months in advance, especially during peak seasons like weddings or holiday events. However, if your date is flexible, feel free to inquire anytime—I’ll do my best to accommodate last-minute requests.",
+      "Both. I support launch sprints, 30–90 day growth pushes, and long-term retainers for projects looking to scale sustainably.",
   },
   {
-    question: "How many photos do I get?",
+    question: "How do we get started?",
     answer:
-      "To ensure availability, it’s ideal to book 3-6 months in advance, especially during peak seasons like weddings or holiday events. However, if your date is flexible, feel free to inquire anytime—I’ll do my best to accommodate last-minute requests.",
+      "Simple — book a free call. We’ll discuss your goals, stage, timeline, and what a realistic roadmap looks like before committing to any engagement.",
   },
 ];
 function Faqs() {

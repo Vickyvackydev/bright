@@ -10,7 +10,7 @@ function Hero() {
         background:
           "radial-gradient(82.26% 196.87% at 50% 49.96%, #D6E5F3 1.53%, #A9B7C7 100%)",
       }}
-      className="w-full min-h-screen flex items-center justify-center flex-col relative overflow-hidden px-4 sm:px-6 md:px-10"
+      className="w-full lg:h-screen h-[500px] flex items-center justify-center relative overflow-hidden px-4 sm:px-6 md:px-10"
     >
       {/* Background Image */}
       <motion.img
@@ -18,7 +18,7 @@ function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         src={BRIGHT}
-        className="max-w-full sm:max-w-[80%] lg:max-w-[70%] 2xl:max-w-[60%] lg:h-auto h-screen lg:object-contain xl:object-cover object-cover"
+        className="max-w-full lg:max-w-[70%] 2xl:max-w-[60%] lg:mt-[22rem] mt-[12rem] lg:h-auto h-screen lg:object-contain object-cover"
         alt="Bright"
       />
 
@@ -27,13 +27,13 @@ function Hero() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="absolute flex flex-col bottom-6 sm:bottom-10 items-center justify-center gap-y-5 sm:gap-y-8"
+        className="absolute inset-0 flex flex-col mt-[19rem] items-center justify-center gap-y-2"
       >
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          className="text-white text-sm sm:text-base md:text-lg font-medium tracking-[2px]"
+          className="text-white text-sm sm:text-base md:text-lg font-medium tracking-tight"
         >
           BLOCKCHAIN IN FOCUS
         </motion.span>
@@ -56,7 +56,7 @@ function Hero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="w-[160px] sm:w-[190px] h-[48px] sm:h-[55px] rounded-lg px-5 py-3 bg-white text-[#111112] shadow-box-shadow backdrop-blur-[10px] font-medium text-sm sm:text-base"
+            className="w-[160px] h-[48px] rounded-lg px-5 py-3 bg-white text-[#111112] shadow-box-shadow backdrop-blur-[10px] font-medium text-sm sm:text-base"
           >
             Book a free call
           </motion.button>
@@ -64,7 +64,7 @@ function Hero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
-            className="w-[160px] sm:w-[190px] h-[48px] sm:h-[55px] rounded-lg text-white border border-white shadow-box-shadow backdrop-blur-[10px] font-medium text-sm sm:text-base"
+            className="w-[160px] h-[48px] rounded-lg text-white border border-white shadow-box-shadow backdrop-blur-[10px] font-medium text-sm sm:text-base"
           >
             See our work
           </motion.button>

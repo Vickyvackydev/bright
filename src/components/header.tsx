@@ -68,14 +68,14 @@ function Header() {
               <div className="relative z-10 h-full flex flex-col justify-between p-12">
                 {/* Header */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
+                  <Link to={"/"} className="flex items-center space-x-2">
                     <img
                       src={DARK_NAME}
                       className="h-8"
                       alt="Bright Emmanuel"
                     />
                     <span className="text-xs text-gray-600">*</span>
-                  </div>
+                  </Link>
                   <img
                     src={DICE}
                     className="w-[20px] h-[20px] cursor-pointer transition-transform duration-300 hover:rotate-90"
@@ -159,7 +159,8 @@ function Header() {
                       enterTo="opacity-100 translate-y-0"
                     >
                       <a
-                        href="#"
+                        href="https://www.instagram.com/brigaz_afia/#"
+                        target="_blank"
                         className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
                       >
                         INSTAGRAM
@@ -173,7 +174,8 @@ function Header() {
                       enterTo="opacity-100 translate-y-0"
                     >
                       <a
-                        href="#"
+                        href="https://www.tiktok.com/@brigaz_afia"
+                        target="_blank"
                         className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
                       >
                         TIKTOK
@@ -187,10 +189,25 @@ function Header() {
                       enterTo="opacity-100 translate-y-0"
                     >
                       <a
-                        href="#"
+                        href="https://www.facebook.com/people/Bright-Emmanuel/100075079857314/"
+                        target="_blank"
                         className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
                       >
                         FACEBOOK
+                      </a>
+                    </Transition>
+                    <Transition
+                      show={open}
+                      enter="transition-all duration-700 ease-out delay-800"
+                      enterFrom="opacity-0 translate-y-4"
+                      enterTo="opacity-100 translate-y-0"
+                    >
+                      <a
+                        href="https://t.me/brightafia"
+                        target="_blank"
+                        className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
+                      >
+                        TELEGRAM
                       </a>
                     </Transition>
                   </div>

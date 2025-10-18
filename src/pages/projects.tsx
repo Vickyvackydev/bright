@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 function Projects() {
   const [visibleImages, setVisibleImages] = useState(1);
+  const [isStackingComplete, setIsStackingComplete] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -47,17 +48,49 @@ function Projects() {
         );
 
         setVisibleImages(newVisibleImages);
+
+        // Mark stacking as complete when all images are visible
+        if (newVisibleImages === totalImages && !isStackingComplete) {
+          setIsStackingComplete(true);
+        }
+      }
+    };
+
+    // Handle wheel events to control scroll during stacking
+    const handleWheel = (e: WheelEvent) => {
+      if (!containerRef.current) return;
+
+      const container = containerRef.current;
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // If we're in the container area and stacking isn't complete
+      if (rect.top < windowHeight && rect.bottom > 0 && !isStackingComplete) {
+        e.preventDefault();
+        // Manually trigger scroll progress based on wheel direction
+        const scrollStep = e.deltaY > 0 ? 1 : -1;
+        const newVisible = Math.max(1, Math.min(6, visibleImages + scrollStep));
+        setVisibleImages(newVisible);
+
+        if (newVisible === 6) {
+          setIsStackingComplete(true);
+        }
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleWheel, { passive: false });
     handleScroll(); // Initial call
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, [isStackingComplete, visibleImages]);
+
   const navigate = useNavigate();
   return (
-    <div className="w-full h-full px-10 pt-[10rem] flex items-center flex-col justify-center">
+    <div className="w-full h-full px-10 pt-[10rem] mb-5 flex items-center flex-col justify-center">
       <div className="flex flex-col gap-y-1.5 items-center justify-center">
         <span className="text-6xl text-center text-black font-medium tracking-tighter">
           A showcase of <br /> captured moments
@@ -66,196 +99,90 @@ function Projects() {
           Exploring stories through the lens, one moment at a time.
         </span>
       </div>
-      <div className="w-full relative mt-10" ref={containerRef}>
-        <div
-          onClick={() => navigate("/chain-industry")}
-          className="w-full h-[500px] cursor-pointer rounded-2xl relative z-10 shadow-2xl"
-        >
-          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[15rem] ml-4 sm:ml-[5rem]">
-            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
-              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
-              </span>
-              <img
-                src={LINE_BAR}
-                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
-                alt=""
-              />
-              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
-                Content Marketing
-              </span>
-            </div>
-            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
-              ChainDustry Blockchain Week 2025
-            </span>
-          </div>
-          <img
-            src={HERO_IMAGE_1}
-            className="w-full h-full object-cover rounded-2xl"
-            alt=""
-          />
-        </div>
-        <div
-          onClick={() => navigate("/bingx-exchange")}
-          className={`w-full h-[500px] rounded-2xl cursor-pointer relative z-20 -mt-20 shadow-2xl transition-all duration-700 ease-out ${
-            visibleImages >= 2
-              ? "opacity-100 transform translate-y-0"
-              : "opacity-0 transform translate-y-8"
-          }`}
-        >
-          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
-            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
-              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
-              </span>
-              <img
-                src={LINE_BAR}
-                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
-                alt=""
-              />
-              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
-                Content Marketing
-              </span>
-            </div>
-            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
-              BingX Exchange
-            </span>
-          </div>
-          <img
-            src={HERO_IMAGE_2}
-            className="w-full h-full object-cover rounded-2xl"
-            alt=""
-          />
-        </div>
-        <div
-          onClick={() => navigate("/myosin")}
-          className={`w-full h-[500px] rounded-2xl cursor-pointer relative z-30 -mt-20 shadow-2xl transition-all duration-700 ease-out ${
-            visibleImages >= 3
-              ? "opacity-100 transform translate-y-0"
-              : "opacity-0 transform translate-y-8"
-          }`}
-        >
-          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
-            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
-              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
-              </span>
-              <img
-                src={LINE_BAR}
-                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
-                alt=""
-              />
-              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
-                Content Marketing
-              </span>
-            </div>
-            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
-              Myosin
-            </span>
-          </div>
-          <img
-            src={HERO_IMAGE_3}
-            className="w-full h-full object-cover rounded-2xl"
-            alt=""
-          />
-        </div>
-        <div
-          onClick={() => navigate("/v-traders")}
-          className={`w-full h-[500px] rounded-2xl cursor-pointer relative z-40 -mt-20 shadow-2xl transition-all duration-700 ease-out ${
-            visibleImages >= 4
-              ? "opacity-100 transform translate-y-0"
-              : "opacity-0 transform translate-y-8"
-          }`}
-        >
-          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
-            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
-              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
-              </span>
-              <img
-                src={LINE_BAR}
-                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
-                alt=""
-              />
-              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
-                Content Marketing
-              </span>
-            </div>
-            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
-              vTrader Global & vTrader Africa
-            </span>
-          </div>
-          <img
-            src={HERO_IMAGE_4}
-            className="w-full h-full object-cover rounded-2xl"
-            alt=""
-          />
-        </div>
-        <div
-          onClick={() => navigate("/infinity-exchange")}
-          className={`w-full h-[500px] rounded-2xl relative cursor-pointer z-50 -mt-20 shadow-2xl transition-all duration-700 ease-out ${
-            visibleImages >= 5
-              ? "opacity-100 transform translate-y-0"
-              : "opacity-0 transform translate-y-8"
-          }`}
-        >
-          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
-            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
-              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
-              </span>
-              <img
-                src={LINE_BAR}
-                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
-                alt=""
-              />
-              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
-                Content Marketing
-              </span>
-            </div>
-            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
-              Infinity Exchange
-            </span>
-          </div>
-          <img
-            src={HERO_IMAGE_5}
-            className="w-full h-full object-cover rounded-2xl"
-            alt=""
-          />
-        </div>
+      <div className="relative w-full mt-10 space-y-0" ref={containerRef}>
+        {[
+          {
+            id: 1,
+            title: "ChainDustry Blockchain Week 2025",
+            img: HERO_IMAGE_1,
+            link: "/chain-industry",
+          },
+          {
+            id: 2,
+            title: "BingX Exchange",
+            img: HERO_IMAGE_2,
+            link: "/bingx-exchange",
+          },
+          { id: 3, title: "Myosin", img: HERO_IMAGE_3, link: "/myosin" },
+          {
+            id: 4,
+            title: "vTrader Global & vTrader Africa",
+            img: HERO_IMAGE_4,
+            link: "/v-traders",
+          },
+          {
+            id: 5,
+            title: "Infinity Exchange",
+            img: HERO_IMAGE_5,
+            link: "/infinity-exchange",
+          },
+          {
+            id: 6,
+            title: "Pvzzle Collection",
+            img: BRIGHT_1_PIC,
+            link: "/puzzle-exchange",
+          },
+        ].map((item, index) => (
+          <div
+            key={item.id}
+            onClick={() => navigate(item.link)}
+            className={`
+        relative w-full h-[700px] rounded-2xl  overflow-hidden cursor-pointer shadow-2xl
+        transition-all duration-700 ease-out
+        ${
+          visibleImages >= index + 1
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }
+        ${
+          index !== 0
+            ? "-mt-[400px] sm:-mt-[380px] md:-mt-[390px] lg:-mt-[400px]"
+            : ""
+        } 
+        z-[${10 + index * 10}]
+      `}
+          >
+            {/* Dark overlay for visibility */}
+            <div className="absolute inset-0 bg-black/50 z-20 rounded-2xl"></div>
 
-        <div
-          onClick={() => navigate("/puzzle-exchange")}
-          className={`w-full h-[500px] rounded-2xl cursor-pointer relative z-60 -mt-20 shadow-2xl transition-all duration-700 ease-out ${
-            visibleImages >= 6
-              ? "opacity-100 transform translate-y-0"
-              : "opacity-0 transform translate-y-8"
-          }`}
-        >
-          <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center gap-y-1.5 sm:gap-y-2 mt-24 sm:mt-[13rem] ml-4 sm:ml-0">
-            <div className="flex items-center gap-x-3 sm:gap-x-6 md:gap-x-10 ">
-              <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
-              </span>
-              <img
-                src={LINE_BAR}
-                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
-                alt=""
-              />
-              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
-                Content Marketing
+            {/* Text content */}
+            <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center justify-center gap-y-3 px-6 sm:px-10 text-center">
+              <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-10">
+                <span className="text-white text-lg sm:text-2xl md:text-3xl font-medium">
+                  Oct 9, 2024
+                </span>
+                <img
+                  src={LINE_BAR}
+                  className="h-[20px] sm:h-[26px] md:h-[30px]"
+                  alt=""
+                />
+                <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
+                  Content Marketing
+                </span>
+              </div>
+              <span className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
+                {item.title}
               </span>
             </div>
-            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
-              Pvzzle Collection
-            </span>
+
+            {/* Background Image */}
+            <img
+              src={item.img}
+              className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+              alt={item.title}
+            />
           </div>
-          <img
-            src={BRIGHT_1_PIC}
-            className="w-full h-full object-cover rounded-2xl"
-            alt=""
-          />
-        </div>
+        ))}
       </div>
     </div>
   );
