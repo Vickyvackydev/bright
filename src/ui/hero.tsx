@@ -27,7 +27,7 @@ function Hero() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="absolute inset-0 flex flex-col mt-[19rem] items-center justify-center gap-y-2"
+        className="absolute inset-0 flex flex-col lg:mt-[19rem] xl:mt-[18rem] 2xl:mt-[15rem] mt-[19rem] items-center justify-center gap-y-2"
       >
         <motion.span
           initial={{ opacity: 0, y: 20 }}

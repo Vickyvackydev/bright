@@ -25,38 +25,86 @@ import Testimonials from "../ui/testimonials";
 import Faqs from "../ui/faqs";
 
 import { motion, useAnimationFrame } from "framer-motion";
-import { useRef } from "react";
+
+import { useRef, useCallback, useEffect } from "react";
 
 export function ToolsMarquee() {
-  const baseVelocity = 50; // pixels per second
-  const x = useRef(0);
-  const direction = useRef(1); // 1 = right, -1 = left
-  const containerRef = useRef<HTMLDivElement>(null);
+  const baseVelocity = 40; // px / second (adjust to taste)
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const scrollerRef = useRef<HTMLDivElement | null>(null);
 
-  useAnimationFrame((delta) => {
-    if (!containerRef.current) return;
+  // logical position (may be a large negative number)
+  const pos = useRef(0);
+  // smoothed position used for DOM transform
+  const rendered = useRef(0);
+  // whether user is hovering (pause)
+  const isHovering = useRef(false);
 
-    // smooth looping scroll
-    x.current += (baseVelocity * direction.current * delta) / 1000;
+  // get half-width (width of one set) to know when to wrap
+  const getHalfWidth = useCallback(() => {
+    // scroller contains duplicated content: row + spacer + row
+    // halfWidth is width of one row + spacer
+    if (!scrollerRef.current) return 0;
+    const total = scrollerRef.current.scrollWidth;
+    return total / 2;
+  }, []);
 
-    // wrap-around when it moves too far
-    if (x.current <= -containerRef.current.scrollWidth / 2) {
-      direction.current = 1; // reverse to right
+  // pause on hover
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+    const enter = () => (isHovering.current = true);
+    const leave = () => (isHovering.current = false);
+    node.addEventListener("mouseenter", enter);
+    node.addEventListener("mouseleave", leave);
+    return () => {
+      node.removeEventListener("mouseenter", enter);
+      node.removeEventListener("mouseleave", leave);
+    };
+  }, []);
+
+  // useAnimationFrame provides (time, delta) where delta is ms since last frame
+  useAnimationFrame((_, delta) => {
+    if (!scrollerRef.current) return;
+
+    const half = getHalfWidth();
+    if (half === 0) return;
+
+    const dt = delta / 1000; // seconds
+
+    // if hovering, slow to a stop (optional smooth pause)
+    const effectiveVel = isHovering.current
+      ? baseVelocity * 0.08
+      : baseVelocity;
+
+    // advance logical position to the left
+    pos.current -= effectiveVel * dt;
+
+    // wrap when we've moved past one duplicated chunk
+    if (pos.current <= -half) {
+      pos.current += half; // add half to wrap seamlessly
     }
-    if (x.current >= 0) {
-      direction.current = -1; // reverse to left
-    }
 
-    containerRef.current.style.transform = `translateX(${x.current}px)`;
+    // LERP smoothing for rendered transform (avoid sudden jumps)
+    // rendered = lerp(rendered, pos, 0.12)
+    rendered.current += (pos.current - rendered.current) * 0.12;
+
+    // Apply transform
+    scrollerRef.current.style.transform = `translateX(${rendered.current}px)`;
   });
 
   return (
-    <div className="relative overflow-hidden py-10">
-      {/* gradient fades */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background-paper to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background-paper to-transparent z-10" />
+    <div ref={containerRef} className="relative overflow-hidden py-10">
+      {/* fade gradients */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white/100 to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white/100 to-transparent z-10" />
 
-      <div ref={containerRef} className="flex w-max will-change-transform">
+      {/* scroller: duplicated content for seamless loop */}
+      <div
+        ref={scrollerRef}
+        className="flex w-max will-change-transform items-center"
+        style={{ transform: "translateX(0px)" }}
+      >
         {renderToolsRow()}
         <div className="ml-10 sm:ml-14 md:ml-20" />
         {renderToolsRow()}
@@ -65,7 +113,9 @@ export function ToolsMarquee() {
   );
 }
 
+/* keep your renderToolsRow as-is, example below */
 function renderToolsRow() {
+  // replace these identifiers with your imports (OBIEX etc.)
   const tools = [
     OBIEX,
     CREO_ENGINE,
@@ -80,13 +130,11 @@ function renderToolsRow() {
   return (
     <div className="flex items-center gap-10 sm:gap-14 md:gap-20" aria-hidden>
       {tools.map((tool, key) => (
-        <motion.img
+        <img
           key={key}
           src={tool}
-          alt="tool-logo"
+          alt=""
           className="shrink-0 opacity-70 hover:opacity-100 transition-opacity w-[105px] h-[54px] object-contain"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 200, damping: 10 }}
         />
       ))}
     </div>
