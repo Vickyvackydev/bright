@@ -33,7 +33,7 @@ export function ToolsMarquee() {
   const direction = useRef(1); // 1 = right, -1 = left
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useAnimationFrame((t, delta) => {
+  useAnimationFrame((delta) => {
     if (!containerRef.current) return;
 
     // smooth looping scroll
