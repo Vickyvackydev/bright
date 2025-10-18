@@ -80,5 +80,13 @@ export { default as MYOSIN_3 } from "./images/myosin-3.jpg";
 export { default as MYOSIN_4 } from "./images/myosin-4.jpg";
 export { default as MYOSIN_5 } from "./images/myosin-5.png";
 export { default as CLOCK } from "./images/Image.svg";
+export { default as OBIEX } from "./images/obiex.png";
+export { default as BING_X } from "./images/bing-x.png";
+export { default as BYBIT } from "./images/bybit.png";
+export { default as TETHER } from "./images/tether.png";
+export { default as IMPAKT } from "./images/impakt.png";
+export { default as OFF_CHAIN } from "./images/off-chain.png";
+export { default as MYODIN } from "./images/myodin.png";
+export { default as CREO_ENGINE } from "./images/creo-engine.png";
 
 // new sets ends here
