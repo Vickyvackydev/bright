@@ -10,11 +10,47 @@ import {
   LINE_BAR,
 } from "../assets";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function Projects() {
   const [visibleImages, setVisibleImages] = useState(1);
   const [isStackingComplete, setIsStackingComplete] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mobileIndex, setMobileIndex] = useState(0);
+
+  // const cards = [
+  //   {
+  //     id: 1,
+  //     title: "ChainDustry Blockchain Week 2025",
+  //     img: HERO_IMAGE_1,
+  //     link: "/chain-industry",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "BingX Exchange",
+  //     img: HERO_IMAGE_2,
+  //     link: "/bingx-exchange",
+  //   },
+  //   { id: 3, title: "Myosin", img: HERO_IMAGE_3, link: "/myosin" },
+  //   {
+  //     id: 4,
+  //     title: "vTrader Global & vTrader Africa",
+  //     img: HERO_IMAGE_4,
+  //     link: "/v-traders",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Infinity Exchange",
+  //     img: HERO_IMAGE_5,
+  //     link: "/infinity-exchange",
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Pvzzle Collection",
+  //     img: BRIGHT_1_PIC,
+  //     link: "/puzzle-exchange",
+  //   },
+  // ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -99,7 +135,96 @@ function Projects() {
           Exploring stories through the lens, one moment at a time.
         </span>
       </div>
-      <div className="relative w-full mt-10 space-y-0" ref={containerRef}>
+      {/* Mobile swipe carousel (3D-like) */}
+      <div
+        className="relative w-full mt-10 md:hidden"
+        style={{ perspective: 1000 }}
+      >
+        <motion.div
+          key={mobileIndex}
+          className="relative w-full h-[520px] rounded-2xl overflow-hidden cursor-pointer shadow-2xl"
+          initial={{ opacity: 0, y: 60, rotateX: -12, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          drag="y"
+          dragElastic={0.12}
+          dragConstraints={{ top: 0, bottom: 0 }}
+          onDragEnd={(e, info) => {
+            e.preventDefault();
+            const threshold = 80;
+            if (info.offset.y < -threshold || info.velocity.y < -600) {
+              setMobileIndex((i) => (i + 1) % 6);
+            } else if (info.offset.y > threshold || info.velocity.y > 600) {
+              setMobileIndex((i) => (i - 1 + 6) % 6);
+            }
+          }}
+          onClick={() => {
+            const links = [
+              "/chain-industry",
+              "/bingx-exchange",
+              "/myosin",
+              "/v-traders",
+              "/infinity-exchange",
+              "/puzzle-exchange",
+            ];
+            navigate(links[mobileIndex]);
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 z-20 rounded-2xl"></div>
+          <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-y-3 px-6 text-center">
+            <div className="flex items-center gap-x-4">
+              <span className="text-white text-xl font-medium">
+                Oct 9, 2024
+              </span>
+              <img src={LINE_BAR} className="h-[22px]" alt="" />
+              <span className="text-[#FFFFFFB8] text-base">
+                Content Marketing
+              </span>
+            </div>
+            <span className="text-white text-3xl font-semibold leading-tight">
+              {
+                [
+                  "ChainDustry Blockchain Week 2025",
+                  "BingX Exchange",
+                  "Myosin",
+                  "vTrader Global & vTrader Africa",
+                  "Infinity Exchange",
+                  "Pvzzle Collection",
+                ][mobileIndex]
+              }
+            </span>
+          </div>
+          <img
+            src={
+              [
+                HERO_IMAGE_1,
+                HERO_IMAGE_2,
+                HERO_IMAGE_3,
+                HERO_IMAGE_4,
+                HERO_IMAGE_5,
+                BRIGHT_1_PIC,
+              ][mobileIndex]
+            }
+            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+            alt=""
+          />
+        </motion.div>
+        <div className="flex items-center justify-center gap-1 mt-3">
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <span
+              key={i}
+              className={`h-1.5 w-1.5 rounded-full ${
+                i === mobileIndex ? "bg-black" : "bg-black/30"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="relative w-full mt-10 space-y-0 hidden md:block"
+        ref={containerRef}
+      >
         {[
           {
             id: 1,
@@ -133,24 +258,21 @@ function Projects() {
             link: "/puzzle-exchange",
           },
         ].map((item, index) => (
-          <div
+          <motion.div
             key={item.id}
             onClick={() => navigate(item.link)}
             className={`
-        relative w-full lg:h-[700px] h-[500px] rounded-2xl  overflow-hidden cursor-pointer shadow-2xl
+        relative w-full lg:h-[700px] h-[500px] rounded-2xl overflow-hidden cursor-pointer shadow-2xl
         transition-all duration-700 ease-out
         ${
           visibleImages >= index + 1
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-10"
         }
-        ${
-          index !== 0
-            ? "-mt-[400px] sm:-mt-[380px] md:-mt-[390px] lg:-mt-[400px]"
-            : ""
-        } 
+        ${index !== 0 ? "mt-6 md:-mt-[360px] lg:-mt-[400px]" : ""} 
         z-[${10 + index * 10}]
       `}
+            whileTap={{ scale: 0.98 }}
           >
             {/* Dark overlay for visibility */}
             <div className="absolute inset-0 bg-black/50 z-20 rounded-2xl"></div>
@@ -181,7 +303,7 @@ function Projects() {
               className="absolute inset-0 w-full h-full object-cover rounded-2xl"
               alt={item.title}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
