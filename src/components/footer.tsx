@@ -1,9 +1,21 @@
 import { MEASURE_GRAPHIC, NAME } from "../assets";
 import { motion } from "framer-motion";
 
+import { useNavigate } from "react-router-dom";
+
 function Footer() {
+  const handleScrollToElem = (id: string) => {
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const navigate = useNavigate();
   return (
-    <div className="w-full bg-[#111112] h-full relative py-16 sm:py-20 px-4 sm:px-6 md:px-10">
+    <div
+      id="contact"
+      className="w-full bg-[#111112] h-full relative py-16 sm:py-20 px-4 sm:px-6 md:px-10"
+    >
       <motion.img
         src={MEASURE_GRAPHIC}
         className="w-full absolute top-0"
@@ -33,20 +45,18 @@ function Footer() {
             <span className="text-[#FFFFFF99] font-medium text-xs sm:text-sm tracking-tighter">
               {"Lets talk".toUpperCase()}
             </span>
-            <span className="text-white font-medium text-base sm:text-xl tracking-tighter">
-              (510) 895-6500
-            </span>
-            <a href="mailto:hello@bright.space">
+
+            <a href="mailto:bright.tech86@gmail.com">
               <span className="text-white font-medium text-3xl sm:text-5xl underline tracking-tighter break-all">
-                hello@bright.space
+                bright.tech86@gmail.com
               </span>
             </a>
             <div className="flex flex-col">
               <span className="text-[#FFFFFF99] font-semibold text-xs sm:text-sm tracking-tighter">
-                Photographer{" "}
+                growth marketer
               </span>
               <span className="text-white font-semibold text-xs sm:text-sm tracking-tighter">
-                (Based in London)
+                base in lagos nigeria
               </span>
             </div>
           </div>
@@ -74,6 +84,14 @@ function Footer() {
               hidden: { opacity: 0, y: 8 },
               visible: { opacity: 1, y: 0 },
             }}
+            whileHover={{
+              scale: 1.05,
+              x: 8,
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="cursor-pointer transition-colors duration-200 hover:text-gray-300"
+            onClick={() => handleScrollToElem("/")}
           >
             Home
           </motion.span>
@@ -82,6 +100,14 @@ function Footer() {
               hidden: { opacity: 0, y: 8 },
               visible: { opacity: 1, y: 0 },
             }}
+            whileHover={{
+              scale: 1.05,
+              x: 8,
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="cursor-pointer transition-colors duration-200 hover:text-gray-300"
+            onClick={() => handleScrollToElem("portfolio")}
           >
             Portfolio
           </motion.span>
@@ -90,22 +116,46 @@ function Footer() {
               hidden: { opacity: 0, y: 8 },
               visible: { opacity: 1, y: 0 },
             }}
+            whileHover={{
+              scale: 1.05,
+              x: 8,
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="cursor-pointer transition-colors duration-200 hover:text-gray-300"
+            onClick={() => navigate("/projects")}
           >
-            Blog
+            Projects
           </motion.span>
           <motion.span
             variants={{
               hidden: { opacity: 0, y: 8 },
               visible: { opacity: 1, y: 0 },
             }}
+            whileHover={{
+              scale: 1.05,
+              x: 8,
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="cursor-pointer transition-colors duration-200 hover:text-gray-300"
+            onClick={() => handleScrollToElem("service")}
           >
-            About Me
+            Service
           </motion.span>
           <motion.span
             variants={{
               hidden: { opacity: 0, y: 8 },
               visible: { opacity: 1, y: 0 },
             }}
+            whileHover={{
+              scale: 1.05,
+              x: 8,
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="cursor-pointer transition-colors duration-200 hover:text-gray-300"
+            onClick={() => handleScrollToElem("/contact")}
           >
             Contact
           </motion.span>
@@ -129,8 +179,30 @@ function Footer() {
           className="flex items-start flex-col gap-y-8 sm:gap-y-[10rem]"
         >
           <div className="flex items-start  flex-col gap-y-2 text-xs sm:text-sm font-semibold text-white">
-            <span>Instagram</span>
-            <span>x.com</span>
+            <a href="https://www.instagram.com/brigaz_afia/#" target="_blank">
+              Instagram
+            </a>
+            <a href="https://x.com/AfiaBrigaz" target="_blank">
+              x.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bright-afia-703481178/"
+              target="_blank"
+            >
+              Linkedin
+            </a>
+            <a href="https://www.tiktok.com/@brigaz_afia" target="_blank">
+              Tiktok
+            </a>
+            <a
+              href="https://www.facebook.com/people/Bright-Emmanuel/100075079857314/"
+              target="_blank"
+            >
+              Facebook
+            </a>
+            <a href="https://t.me/brightafia" target="_blank">
+              Telegram
+            </a>
           </div>
           <span className="text-[#FFFFFF99] font-semibold text-nowrap text-xs sm:text-sm">
             @ {new Date().getFullYear()} All rights reserved

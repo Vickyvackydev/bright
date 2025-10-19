@@ -38,7 +38,8 @@ function MoreProjects() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="relative w-full h-[400px] sm:h-[500px] md:h-[650px] rounded-2xl overflow-hidden"
+          className="relative w-full cursor-pointer h-[400px] sm:h-[500px] md:h-[650px] rounded-2xl overflow-hidden"
+          onClick={() => navigate("/bingx-exchange")}
         >
           <motion.img
             src={HERO_IMAGE_2}
@@ -64,7 +65,7 @@ function MoreProjects() {
               </span>
               <img src={LINE_BAR} className="h-[20px] sm:h-[31.5px]" alt="" />
               <span className="text-[#FFFFFFB8] text-sm sm:text-lg">
-                Content Marketing
+                Crypto • Trading
               </span>
             </div>
             <span className="text-white text-3xl sm:text-5xl font-medium">
@@ -97,7 +98,8 @@ function MoreProjects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             viewport={{ once: true }}
-            className="absolute inset-0 z-30 flex flex-col items-start gap-y-2 justify-end p-6 sm:p-10 md:p-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+            className="absolute inset-0 cursor-pointer z-30 flex flex-col items-start gap-y-2 justify-end p-6 sm:p-10 md:p-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
+            onClick={() => navigate("/v-traders")}
           >
             <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-10 mb-2">
               <span className="text-white text-xl sm:text-3xl font-medium">
@@ -105,11 +107,11 @@ function MoreProjects() {
               </span>
               <img src={LINE_BAR} className="h-[20px] sm:h-[31.5px]" alt="" />
               <span className="text-[#FFFFFFB8] text-sm sm:text-lg">
-                Content Marketing
+                Crypto • Trading
               </span>
             </div>
             <span className="text-white text-3xl sm:text-5xl font-medium">
-              Habby Exchange
+              vTrader Global & vTrader Africa
             </span>
           </motion.div>
         </motion.div>

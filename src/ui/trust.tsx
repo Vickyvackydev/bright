@@ -1,11 +1,11 @@
 import {
   ANIMATION,
   ARROW_LIGHT,
+  BRIGHT_7_PIC,
   BRIGHT_MIC,
   BRIGHTY,
   BRIGHTY_2,
   CLOCK,
-  GIRLIE,
   GROUP,
   GROUP_PHOTOS,
   TEXTING,
@@ -72,7 +72,7 @@ function Trust() {
             />
             <div className="flex items-start gap-x-2 mt-4">
               <span className="text-[#111112] text-3xl sm:text-4xl font-medium">
-                100+
+                50+
               </span>
               <span className="text-[#11111299] font-medium text-xs sm:text-sm">
                 projects and collaborations across the decentralized space.
@@ -173,7 +173,7 @@ function Trust() {
             <div className="w-full h-full lg:h-[190px] xl:h-[190px] relative rounded-2xl mt-3 overflow-hidden">
               {/* Background Image */}
               <img
-                src={GIRLIE}
+                src={BRIGHT_7_PIC}
                 className="absolute inset-0 w-full h-full object-cover object-center rounded-2xl"
                 alt=""
               />

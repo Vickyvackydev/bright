@@ -134,7 +134,7 @@ function renderToolsRow() {
           key={key}
           src={tool}
           alt=""
-          className="shrink-0 opacity-70 hover:opacity-100 transition-opacity w-[105px] h-[54px] object-contain"
+          className="shrink-0 opacity-70 hover:opacity-100 transition-opacity w-[75px] h-[54px] object-contain"
         />
       ))}
     </div>

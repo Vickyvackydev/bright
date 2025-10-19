@@ -21,24 +21,28 @@ function PuzzleExchange() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute inset-0 z-30 flex flex-col items-start gap-y-2 mt-40 sm:mt-60 md:mt-72 xl:mt-[26rem] ml-4 sm:ml-6 md:ml-10 xl:ml-10"
+          className="absolute inset-0 z-30 flex flex-col items-start gap-y-2 mt-[26rem] px-5"
         >
-          <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-10 ">
-            <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-              Oct 9, 2024
-            </span>
-            <img
-              src={LINE_BAR}
-              className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
-              alt=""
-            />
-            <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
-              Content Marketing
+          {/* Bottom-anchored gradient overlay for natural fade */}
+          <div className="absolute inset-x-0 bottom-0 h-[100%] sm:h-[70%] md:h-[70%] lg:h-[65%] bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none"></div>
+          <div className="relative z-10 flex flex-col items-start gap-y-2 w-full">
+            <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-10 ">
+              {/* <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
+                Oct 9, 2024
+              </span> */}
+              <img
+                src={LINE_BAR}
+                className="h-[20px] sm:h-[26px] md:h-[28px] xl:h-[31.5px]"
+                alt=""
+              />
+              <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
+                Fashion
+              </span>
+            </div>
+            <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
+              Pvzzle Collection
             </span>
           </div>
-          <span className="text-white text-3xl sm:text-4xl md:text-5xl font-medium">
-            Pvzzle Collection
-          </span>
         </motion.div>
         <motion.img
           src={BRIGHT_1_PIC}
@@ -108,7 +112,7 @@ function PuzzleExchange() {
                   Type
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  Rebrand
+                  Content/Influencer marketing
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -116,7 +120,7 @@ function PuzzleExchange() {
                   Category
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  AI
+                  Fvvashion
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -131,7 +135,7 @@ function PuzzleExchange() {
           </div>
         </motion.div>
       </div>
-      <div className="w-full h-[320px] sm:h-[420px] md:h-[520px] xl:h-[700px] px-4 sm:px-6 md:px-10 flex flex-col md:flex-row pb-12 md:pb-20 items-center justify-between gap-4">
+      <div className="w-full h-[800px] sm:h-[420px] md:h-[520px] xl:h-[700px] px-4 sm:px-6 md:px-10 flex flex-col md:flex-row pb-12 md:pb-20 items-center justify-between gap-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -185,7 +189,7 @@ function PuzzleExchange() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col gap-y-5 w-full xl:w-[60%] font-geist"
+          className="flex flex-col gap-y-5 px-5 w-full xl:w-[60%] font-geist"
         >
           <ul className="list-disc list-outside text-base md:text-lg space-y-3 text-[#4D5153]">
             <li>
@@ -204,7 +208,7 @@ function PuzzleExchange() {
           </ul>
         </motion.div>
       </div>
-      <div className="px-4 sm:px-6 md:px-10 pb-12 md:pb-20 h-[360px] sm:h-[460px] md:h-[560px] xl:h-[600px] flex flex-col md:flex-row items-start justify-between gap-4 md:gap-7">
+      <div className="px-4 sm:px-6 md:px-10 pb-12 md:pb-20 h-[650px] sm:h-[460px] md:h-[560px] xl:h-[600px] flex flex-col md:flex-row items-start justify-between gap-4 md:gap-7">
         <motion.img
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}

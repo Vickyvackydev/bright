@@ -6,6 +6,7 @@ function Hero() {
 
   return (
     <div
+      id="/"
       style={{
         background:
           "radial-gradient(82.26% 196.87% at 50% 49.96%, #D6E5F3 1.53%, #A9B7C7 100%)",
@@ -27,7 +28,7 @@ function Hero() {
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="absolute inset-0 flex flex-col lg:mt-[19rem] xl:mt-[18rem] 2xl:mt-[15rem] mt-[19rem] items-center justify-center gap-y-2"
+        className="absolute inset-0 flex flex-col lg:mt-[19rem] xl:mt-[18rem] 2xl:mt-[10rem] mt-[19rem] items-center justify-center gap-y-2"
       >
         <motion.span
           initial={{ opacity: 0, y: 20 }}
@@ -51,7 +52,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-3 sm:gap-x-4 mt-4"
+          className="flex  items-center gap-3 sm:gap-x-4 mt-4"
         >
           <motion.button
             whileHover={{ scale: 1.05 }}

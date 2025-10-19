@@ -90,12 +90,12 @@ function Projects() {
 
   const navigate = useNavigate();
   return (
-    <div className="w-full h-full px-10 pt-[10rem] mb-5 flex items-center flex-col justify-center">
+    <div className="w-full h-full lg:px-10 px-5 lg:pt-[10rem] pt-[5rem] mb-5 flex items-center flex-col justify-center">
       <div className="flex flex-col gap-y-1.5 items-center justify-center">
-        <span className="text-6xl text-center text-black font-medium tracking-tighter">
+        <span className="lg:text-6xl text-4xl text-center text-black font-medium tracking-tighter">
           A showcase of <br /> captured moments
         </span>
-        <span className="text-xl text-black font-medium">
+        <span className="text-xl text-black text-center opacity-50 font-medium">
           Exploring stories through the lens, one moment at a time.
         </span>
       </div>
@@ -137,7 +137,7 @@ function Projects() {
             key={item.id}
             onClick={() => navigate(item.link)}
             className={`
-        relative w-full h-[700px] rounded-2xl  overflow-hidden cursor-pointer shadow-2xl
+        relative w-full lg:h-[700px] h-[500px] rounded-2xl  overflow-hidden cursor-pointer shadow-2xl
         transition-all duration-700 ease-out
         ${
           visibleImages >= index + 1

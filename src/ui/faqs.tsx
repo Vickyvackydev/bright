@@ -68,7 +68,7 @@ function Faqs() {
                 Bright Emmanuel
               </span>
               <span className="text-[15px] sm:text-[16px] font-normal text-[#11111299] tracking-tighter">
-                Professional Photographer
+                Growth Marketer
               </span>
             </div>
           </div>
@@ -87,16 +87,34 @@ function Faqs() {
           </div>
 
           {/* Button */}
-          <div className="flex items-center mt-16 sm:mt-24 md:mt-40 lg:mt-52 gap-x-6 border-b-2 pb-3 cursor-pointer transition-all hover:opacity-80">
-            <span className="text-lg sm:text-[22px] font-semibold text-[#111112] tracking-tighter">
+          <motion.div
+            className="flex items-center mt-16 sm:mt-24 md:mt-40 lg:mt-52 gap-x-6 border-b-2 pb-3 cursor-pointer"
+            whileHover={{
+              x: 8,
+              transition: { duration: 0.2, ease: "easeOut" },
+            }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => window.open("https://t.me/brightafia", "_blank")}
+          >
+            <motion.span
+              className="text-lg sm:text-[22px] font-semibold text-[#111112] tracking-tighter"
+              whileHover={{
+                color: "#333333",
+                transition: { duration: 0.2 },
+              }}
+            >
               Ask me a question
-            </span>
-            <img
+            </motion.span>
+            <motion.img
               src={BLACK_ARROW_RIGHT}
               className="w-[14px] sm:w-[16px] h-[14px] sm:h-[16px]"
               alt=""
+              whileHover={{
+                x: 4,
+                transition: { duration: 0.2, ease: "easeOut" },
+              }}
             />
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Column (FAQs) */}
@@ -127,11 +145,11 @@ function Faqs() {
                   </span>
                   <div
                     onClick={() => setSelectedFaq(selectedFaq === i ? null : i)}
-                    className="w-[40px] sm:w-[48px] h-[40px] sm:h-[48px] bg-white cursor-pointer rounded-full flex items-center justify-center shadow-sm"
+                    className="min-w-[40px] min-h-[40px] bg-white cursor-pointer rounded-full flex items-center justify-center shadow-sm"
                   >
                     <img
                       src={selectedFaq === i ? MINUS_ICON : PLUS_ICON}
-                      className="w-[14px] sm:w-[16px] h-[14px] sm:h-[16px]"
+                      className="min-w-[16px] min-h-[16px]"
                       alt=""
                     />
                   </div>

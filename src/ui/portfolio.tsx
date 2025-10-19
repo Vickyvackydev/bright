@@ -76,7 +76,7 @@ const itemVariants = {
 };
 function Portfolio() {
   return (
-    <div className="w-full lg:px-10 px-5 py-20">
+    <div id="portfolio" className="w-full lg:px-10 px-5 py-20">
       <div className="border-t-2 border-[#111112] flex flex-col">
         <span className="text-sm font-semibold text-[#111112] mt-3">
           Portfolio

@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 
 import { useState } from "react";
-//
+
 import { Transition } from "@headlessui/react";
 import { DICE, STAR, DARK_NAME } from "../assets";
-//
+
 import clsx from "clsx";
+
 function Header() {
-  // Removed unused hooks to satisfy linter and simplify component
   const [open, setOpen] = useState(false);
+  const handleScrollToElem = (id: string) => {
+    const elem = document.getElementById(id);
+    if (elem) {
+      elem.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <>
@@ -22,22 +28,29 @@ function Header() {
           open && "opacity-0 scale-95"
         )}
       >
-        <Link to={"/"}>
+        <Link to={"/"} onClick={() => handleScrollToElem("/")}>
           <img src={STAR} className="w-[20px] h-[20px]" alt="" />
         </Link>
         <div className="hidden md:flex items-center justify-between w-auto gap-x-10">
-          <span className="text-sm md:text-[16px] font-medium text-[#2E2E2E]">
-            About{" "}
-          </span>
-          <span className="text-sm md:text-[16px] font-medium text-[#2E2E2E]">
+          <span
+            onClick={() => handleScrollToElem("service")}
+            className="text-sm cursor-pointer md:text-[16px] font-medium text-[#2E2E2E]"
+          >
             Service
           </span>
+
           <Link
             to="/projects"
             className="text-sm md:text-[16px] font-medium text-[#2E2E2E]"
           >
             Projects
           </Link>
+          <span
+            onClick={() => handleScrollToElem("contact")}
+            className="text-sm md:text-[16px] cursor-pointer font-medium text-[#2E2E2E]"
+          >
+            Contact
+          </span>
         </div>
         <img
           src={DICE}
@@ -65,9 +78,9 @@ function Header() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5"></div>
 
               {/* Content */}
-              <div className="relative z-10 h-full flex flex-col justify-between p-12">
+              <div className="relative z-10 h-full flex flex-col items-start justify-between p-12">
                 {/* Header */}
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between w-full">
                   <Link to={"/"} className="flex items-center space-x-2">
                     <img
                       src={DARK_NAME}
@@ -93,13 +106,15 @@ function Header() {
                       enterFrom="opacity-0 translate-x-8"
                       enterTo="opacity-100 translate-x-0"
                     >
-                      <Link
-                        to="/"
-                        className="block text-[31px] tracking-tighter font-semibold text-[#2E2E2E] hover:text-gray-600 transition-colors duration-300"
-                        onClick={() => setOpen(false)}
+                      <span
+                        className="block text-[31px] cursor-pointer tracking-tighter font-semibold text-[#2E2E2E] hover:text-gray-600 transition-colors duration-300"
+                        onClick={() => {
+                          setOpen(false);
+                          handleScrollToElem("service");
+                        }}
                       >
-                        ABOUT
-                      </Link>
+                        SERVICE
+                      </span>
                     </Transition>
 
                     <Transition
@@ -123,102 +138,87 @@ function Header() {
                       enterFrom="opacity-0 translate-x-8"
                       enterTo="opacity-100 translate-x-0"
                     >
-                      <Link
-                        to="/contact"
-                        className="block text-[31px] tracking-tighter font-semibold text-[#2E2E2E] hover:text-gray-600 transition-colors duration-300"
-                        onClick={() => setOpen(false)}
+                      <span
+                        className="block text-[31px] cursor-pointer tracking-tighter font-semibold text-[#2E2E2E] hover:text-gray-600 transition-colors duration-300"
+                        onClick={() => {
+                          setOpen(false);
+                          handleScrollToElem("/contact");
+                        }}
                       >
                         CONTACT
-                      </Link>
-                    </Transition>
-
-                    <Transition
-                      show={open}
-                      enter="transition-all duration-700 ease-out delay-500"
-                      enterFrom="opacity-0 translate-x-8"
-                      enterTo="opacity-100 translate-x-0"
-                    >
-                      <Link
-                        to="/"
-                        className="block text-[31px] tracking-tighter font-semibold text-[#2E2E2E] hover:text-gray-600 transition-colors duration-300"
-                        onClick={() => setOpen(false)}
-                      >
-                        WORK WITH ME
-                      </Link>
+                      </span>
                     </Transition>
                   </div>
                 </div>
 
                 {/* Footer */}
-                <div className="flex items-center lg:flex-row flex-col mt-10 justify-between">
-                  <div className="flex items-center lg:flex-row flex-col justify-between w-[70%]">
-                    <Transition
-                      show={open}
-                      enter="transition-all duration-700 ease-out delay-600"
-                      enterFrom="opacity-0 translate-y-4"
-                      enterTo="opacity-100 translate-y-0"
-                    >
-                      <a
-                        href="https://www.instagram.com/brigaz_afia/#"
-                        target="_blank"
-                        className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
-                      >
-                        INSTAGRAM
-                      </a>
-                    </Transition>
 
-                    <Transition
-                      show={open}
-                      enter="transition-all duration-700 ease-out delay-700"
-                      enterFrom="opacity-0 translate-y-4"
-                      enterTo="opacity-100 translate-y-0"
+                <div className="flex lg:items-center items-start lg:flex-row flex-col justify-between  w-full">
+                  <Transition
+                    show={open}
+                    enter="transition-all duration-700 ease-out delay-600"
+                    enterFrom="opacity-0 translate-y-4"
+                    enterTo="opacity-100 translate-y-0"
+                  >
+                    <a
+                      href="https://www.instagram.com/brigaz_afia/#"
+                      target="_blank"
+                      className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
                     >
-                      <a
-                        href="https://www.tiktok.com/@brigaz_afia"
-                        target="_blank"
-                        className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
-                      >
-                        TIKTOK
-                      </a>
-                    </Transition>
+                      INSTAGRAM
+                    </a>
+                  </Transition>
 
-                    <Transition
-                      show={open}
-                      enter="transition-all duration-700 ease-out delay-800"
-                      enterFrom="opacity-0 translate-y-4"
-                      enterTo="opacity-100 translate-y-0"
+                  <Transition
+                    show={open}
+                    enter="transition-all duration-700 ease-out delay-700"
+                    enterFrom="opacity-0 translate-y-4"
+                    enterTo="opacity-100 translate-y-0"
+                  >
+                    <a
+                      href="https://www.tiktok.com/@brigaz_afia"
+                      target="_blank"
+                      className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
                     >
-                      <a
-                        href="https://www.facebook.com/people/Bright-Emmanuel/100075079857314/"
-                        target="_blank"
-                        className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
-                      >
-                        FACEBOOK
-                      </a>
-                    </Transition>
-                    <Transition
-                      show={open}
-                      enter="transition-all duration-700 ease-out delay-800"
-                      enterFrom="opacity-0 translate-y-4"
-                      enterTo="opacity-100 translate-y-0"
-                    >
-                      <a
-                        href="https://t.me/brightafia"
-                        target="_blank"
-                        className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
-                      >
-                        TELEGRAM
-                      </a>
-                    </Transition>
-                  </div>
+                      TIKTOK
+                    </a>
+                  </Transition>
 
+                  <Transition
+                    show={open}
+                    enter="transition-all duration-700 ease-out delay-800"
+                    enterFrom="opacity-0 translate-y-4"
+                    enterTo="opacity-100 translate-y-0"
+                  >
+                    <a
+                      href="https://www.facebook.com/people/Bright-Emmanuel/100075079857314/"
+                      target="_blank"
+                      className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
+                    >
+                      FACEBOOK
+                    </a>
+                  </Transition>
+                  <Transition
+                    show={open}
+                    enter="transition-all duration-700 ease-out delay-800"
+                    enterFrom="opacity-0 translate-y-4"
+                    enterTo="opacity-100 translate-y-0"
+                  >
+                    <a
+                      href="https://t.me/brightafia"
+                      target="_blank"
+                      className="text-xl font-medium text-[#999999] hover:text-gray-800 transition-colors duration-300"
+                    >
+                      TELEGRAM
+                    </a>
+                  </Transition>
                   <Transition
                     show={open}
                     enter="transition-all duration-700 ease-out delay-900"
                     enterFrom="opacity-0 translate-y-4"
                     enterTo="opacity-100 translate-y-0"
                   >
-                    <div className="text-xl font-medium text-[#999999]">
+                    <div className="text-xl text-start font-medium text-[#999999]">
                       {new Date().toLocaleTimeString("en-US", {
                         hour12: false,
                         hour: "2-digit",

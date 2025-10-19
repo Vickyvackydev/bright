@@ -21,6 +21,7 @@ export { default as BRIGHT_3_PIC } from "./images/bright-3.jpg";
 export { default as BRIGHT_4_PIC } from "./images/bright-4.jpg";
 export { default as BRIGHT_5_PIC } from "./images/bright-5.jpg";
 export { default as BRIGHT_6_PIC } from "./images/bright-6.png";
+export { default as BRIGHT_7_PIC } from "./images/bright-7.jpg";
 export { default as BOTTOM } from "./images/botton.png";
 export { default as BOTTOM_1 } from "./images/bottom-1.png";
 export { default as BOTTOM_2 } from "./images/bottom-2.png";
