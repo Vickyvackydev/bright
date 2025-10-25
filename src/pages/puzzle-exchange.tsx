@@ -2,7 +2,6 @@ import { useState } from "react";
 import MoreProjects from "../ui/more-projects";
 import { motion } from "framer-motion";
 import {
-  ARROW_LIGHT,
   ARTIST,
   BRIGHT_1_PIC,
   COOL,
@@ -68,12 +67,12 @@ function PuzzleExchange() {
               Bright Method® <br />/ Overview
             </span>
           </div>
-          <button className="w-[130px] h-[44px] md:w-[147px] md:h-[49px] rounded-3xl bg-black pr-1 pl-4 flex items-center justify-between">
+          {/* <button className="w-[130px] h-[44px] md:w-[147px] md:h-[49px] rounded-3xl bg-black pr-1 pl-4 flex items-center justify-between">
             <span className="text-white text-sm font-medium">Visit Site</span>
             <div className="w-[36px] h-[36px] md:w-[40.5px] md:h-[40.5px] rounded-full bg-[#29292B] flex items-center justify-center">
               <img src={ARROW_LIGHT} className="w-[16px] h-[16px]" alt="" />
             </div>
-          </button>
+          </button> */}
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -104,7 +103,7 @@ function PuzzleExchange() {
                   Engagement
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium border-b border-[#111112]">
-                  FastTrack®
+                  Puzzle®
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -120,7 +119,7 @@ function PuzzleExchange() {
                   Category
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  Fvvashion
+                  Fashion
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -128,7 +127,7 @@ function PuzzleExchange() {
                   Model
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  B2B
+                  B2C
                 </span>
               </div>
             </div>

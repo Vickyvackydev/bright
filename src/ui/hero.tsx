@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { BRIGHT, TEXT_FRAME } from "../assets";
 import { motion } from "framer-motion";
 
 function Hero() {
   // const darkmode = useSelector(selectDarkMode);
+  const navigate = useNavigate();
 
   return (
     <div
@@ -55,6 +57,7 @@ function Hero() {
           className="flex  items-center gap-3 sm:gap-x-4 mt-4"
         >
           <motion.button
+            onClick={() => window.open("https://t.me/brightafia", "_blank")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             className="w-[160px] h-[48px] rounded-lg px-5 py-3 bg-white text-[#111112] shadow-box-shadow backdrop-blur-[10px] font-medium text-sm sm:text-base"
@@ -65,9 +68,10 @@ function Hero() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
+            onClick={() => navigate("/projects")}
             className="w-[160px] h-[48px] rounded-lg text-white border border-white shadow-box-shadow backdrop-blur-[10px] font-medium text-sm sm:text-base"
           >
-            See our work
+            See my work
           </motion.button>
         </motion.div>
       </motion.div>

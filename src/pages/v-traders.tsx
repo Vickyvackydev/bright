@@ -29,7 +29,7 @@ function VTraders() {
           <div className="relative z-10 flex flex-col items-start gap-y-2 w-full">
             <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-10 ">
               <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
+                Sept, 2025
               </span>
               <img
                 src={LINE_BAR}
@@ -69,7 +69,12 @@ function VTraders() {
               Bright Method® <br />/ Overview
             </span>
           </div>
-          <button className="w-[130px] h-[44px] md:w-[147px] md:h-[49px] rounded-3xl bg-black pr-1 pl-4 flex items-center justify-between">
+          <button
+            onClick={() =>
+              window.open("https://www.vtrader.io/en-ng", "_blank")
+            }
+            className="w-[130px] h-[44px] md:w-[147px] md:h-[49px] rounded-3xl bg-black pr-1 pl-4 flex items-center justify-between"
+          >
             <span className="text-white text-sm font-medium">Visit Site</span>
             <div className="w-[36px] h-[36px] md:w-[40.5px] md:h-[40.5px] rounded-full bg-[#29292B] flex items-center justify-center">
               <img src={ARROW_LIGHT} className="w-[16px] h-[16px]" alt="" />
@@ -107,7 +112,7 @@ function VTraders() {
                   Engagement
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium border-b border-[#111112]">
-                  FastTrack®
+                  V-Trader®
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -115,7 +120,7 @@ function VTraders() {
                   Type
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  Rebrand
+                  Marketing
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -123,7 +128,7 @@ function VTraders() {
                   Category
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  Crypto • Trading
+                  Social Media • Event Activation • Global Community Growth
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -131,7 +136,7 @@ function VTraders() {
                   Model
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  B2B
+                  B2C
                 </span>
               </div>
             </div>

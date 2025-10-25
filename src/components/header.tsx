@@ -45,12 +45,13 @@ function Header() {
           >
             Projects
           </Link>
-          <span
-            onClick={() => handleScrollToElem("contact")}
+          <Link
+            to={"/about-me"}
+            // onClick={() => handleScrollToElem("about")}
             className="text-sm md:text-[16px] cursor-pointer font-medium text-[#2E2E2E]"
           >
-            Contact
-          </span>
+            About Me
+          </Link>
         </div>
         <img
           src={DICE}
@@ -138,15 +139,16 @@ function Header() {
                       enterFrom="opacity-0 translate-x-8"
                       enterTo="opacity-100 translate-x-0"
                     >
-                      <span
+                      <Link
+                        to={"/about-me"}
                         className="block text-[31px] cursor-pointer tracking-tighter font-semibold text-[#2E2E2E] hover:text-gray-600 transition-colors duration-300"
                         onClick={() => {
                           setOpen(false);
-                          handleScrollToElem("/contact");
+                          // handleScrollToElem("/about-me");
                         }}
                       >
-                        CONTACT
-                      </span>
+                        ABOUT ME
+                      </Link>
                     </Transition>
                   </div>
                 </div>

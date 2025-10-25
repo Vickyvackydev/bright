@@ -29,7 +29,7 @@ function InfinityExchange() {
           <div className="relative z-10 flex flex-col items-start gap-y-2 w-full">
             <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-10 ">
               <span className="text-white text-xl sm:text-2xl md:text-3xl xl:text-4xl font-medium">
-                Oct 9, 2024
+                Mar, 2024
               </span>
               <img
                 src={LINE_BAR}
@@ -109,7 +109,7 @@ function InfinityExchange() {
                   Engagement
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium border-b border-[#111112]">
-                  FastTrack®
+                  Infinity Exchange®
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -125,7 +125,7 @@ function InfinityExchange() {
                   Category
                 </span>
                 <span className="text-sm text-wrap text-end md:text-base text-[#111112] font-medium ">
-                  DeFi • Web3 • Gltobal Community Growth • RWA
+                  Event Activation • Global Community Growth
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -133,7 +133,7 @@ function InfinityExchange() {
                   Model
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  B2B
+                  B2C
                 </span>
               </div>
             </div>

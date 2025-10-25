@@ -13,6 +13,7 @@ import InfinityExchange from "./pages/infinity-exchange";
 import BingXExchange from "./pages/bingx-exchange";
 import VTraders from "./pages/v-traders";
 import Myosin from "./pages/myosin";
+import AboutMe from "./pages/about-me";
 
 function App() {
   const location = useLocation();
@@ -57,6 +58,7 @@ function App() {
           <Route path="/bingx-exchange" element={<BingXExchange />} />
           <Route path="/v-traders" element={<VTraders />} />
           <Route path="/myosin" element={<Myosin />} />
+          <Route path="/about-me" element={<AboutMe />} />
         </Routes>
       </Layout>
     </AnimatePresence>

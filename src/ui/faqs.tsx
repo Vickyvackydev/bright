@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BLACK_ARROW_RIGHT, BRIGHTY_2, PLUS_ICON, MINUS_ICON } from "../assets";
+import { BLACK_ARROW_RIGHT, PLUS_ICON, MINUS_ICON, BRIGHT__ } from "../assets";
 import { motion, AnimatePresence } from "framer-motion";
 
 const myFaqs = [
@@ -59,7 +59,7 @@ function Faqs() {
           {/* Profile */}
           <div className="flex items-center gap-x-3 sm:gap-x-4">
             <img
-              src={BRIGHTY_2}
+              src={BRIGHT__}
               className="w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] rounded-xl object-cover"
               alt=""
             />
@@ -80,9 +80,7 @@ function Faqs() {
             </span>
             <span className="text-[15px] sm:text-[16px] font-normal text-[#11111299] tracking-tighter">
               No worries! If you have any other questions or need more
-              information, feel free to reach out directly. I’m always happy to
-              help and make sure you feel confident before booking your session.
-              Let’s chat!
+              information, feel free to reach out directly.
             </span>
           </div>
 

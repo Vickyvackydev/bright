@@ -1,21 +1,38 @@
 import { useState } from "react";
-import { BUTTON, JOHNSON, QUOTE } from "../assets";
+import { ARTIST, BUTTON, IMOH, OSKA, QUOTE, SIMON } from "../assets";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonies = [
   {
     name: "Simon",
     role: "Co founder Myosin",
+    img: SIMON,
     heading: "Bright is an expert events organizer & content creator.",
     content:
       "He has great instincts for social media and is a great art director for staging photos for marketing and promotion purposes. He also brings a very positive vibe and energy about him, which was a pleasure to work with.",
   },
   {
     name: "Oskar",
+    img: OSKA,
     role: "Growth BD BINGX",
     heading: "Working with Bright was smooth and professional.",
     content:
       "His strategic approach and dedication helped us execute our campaigns effectively and reach impressive results. Highly recommended.",
+  },
+  {
+    name: "Silas",
+    img: IMOH,
+    role: "Product Manager",
+    heading: "Bright is a dynamic marketer and community builder.",
+    content: "He’s a passionate collaborator who turns ideas into real impact.",
+  },
+  {
+    name: "Israel Silas",
+    img: ARTIST,
+    role: "C.E.O - Pvzzle Collections",
+    heading: "Working with Bright has been an absolute pleasure.",
+    content:
+      "He’s not just an influencer marketer but a versatile creative who brings life and excitement to every project.",
   },
 ];
 
@@ -110,11 +127,11 @@ function Testimonials() {
 
                   <div className="flex items-center gap-x-3">
                     <img
-                      src={JOHNSON}
+                      src={testimonies[currentIndex].img}
                       className="w-[48px] h-[48px] md:w-[58px] md:h-[58px] rounded-full object-cover"
                       alt=""
                     />
-                    <div className="flex flex-col items-start gap-2">
+                    <div className="flex flex-col items-start gap-0.5">
                       <div className="flex items-center gap-x-1">
                         <span className="text-[#111112] font-semibold text-xs">
                           {testimonies[currentIndex].name}
@@ -154,6 +171,7 @@ function Testimonials() {
           </span>
 
           <motion.button
+            onClick={() => window.open("https://t.me/brightafia", "_blank")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.3 }}

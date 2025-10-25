@@ -1,10 +1,10 @@
 import {
   BLACK_BG,
+  BRIGHT__,
   FRAME_1_PIC,
   FRAME_2_PIC,
   FRAME_3_PIC,
   FRAME_4_PIC,
-  FRAME_5_PIC,
   FRAME_6_PIC,
 } from "../assets";
 import { motion } from "framer-motion";
@@ -35,7 +35,7 @@ const services = [
       "Helping projects launch, scale, and sustain. Complete marketing strategies from concept to success.",
   },
   {
-    img: FRAME_5_PIC,
+    img: BRIGHT__,
     title: "Content Creation & Storytelling",
     content:
       "Crafting narratives that make blockchain human, relatable, and unforgettable",

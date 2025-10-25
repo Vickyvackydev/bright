@@ -2,18 +2,14 @@ import {
   BING_X,
   BYBIT,
   CREO_ENGINE,
-  FIRST_IMAGE,
-  FORTH_IMAGE,
   IMPAKT,
   MEASURE_MASK,
   MYODIN,
   OBIEX,
   OFF_CHAIN,
   QUOTE,
-  SECOND_IMAGE,
   STAR,
   TETHER,
-  THIRD_IMAGE,
 } from "../assets";
 
 import Hero from "../ui/hero";
@@ -193,20 +189,32 @@ function Home() {
           className="w-full flex lg:flex-row flex-col items-center justify-between gap-3 lg:px-10 px-5  mt-16 mb-20"
         >
           <div className="flex items-start flex-col gap-y-3 w-full">
-            <div className="w-full border flex lg:flex-row flex-col  lg:items-center items-end justify-between border-[#B8C2CC] rounded-xl px-4 py-3">
+            {/* <div className="w-full border flex lg:flex-row flex-col  lg:items-center items-end justify-between border-[#B8C2CC] rounded-xl px-4 py-3">
               <div className="flex items-center gap-x-2">
                 <img
-                  src={FIRST_IMAGE}
-                  className="w-[50.97px] h-[50.97px]"
+                  src={MYOSIN_4}
+                  className="w-[50.97px] h-[50.97px] rounded-full"
                   alt=""
                 />
-                <img src={SECOND_IMAGE} className="w-[59px] h-[59px]" alt="" />
-                <img src={THIRD_IMAGE} className="w-[62px] h-[62px]" alt="" />
-                <img src={FORTH_IMAGE} className="w-[70px] h-[70px]" alt="" />
+                <img
+                  src={V_TRADER}
+                  className="w-[59px] h-[59px] rounded-full"
+                  alt=""
+                />
+                <img
+                  src={ARTIST}
+                  className="w-[62px] h-[62px] rounded-full "
+                  alt=""
+                />
+                <img
+                  src={BINGX}
+                  className="w-[70px] h-[70px] rounded-full"
+                  alt=""
+                />
               </div>
               <span className="text-xs text-nowrap ">30+ Partners</span>
-            </div>
-            <div className="w-full p-4 border border-[#B8C2CC] rounded-xl h-[40vh] flex flex-col items-start justify-between">
+            </div> */}
+            <div className="w-full p-4 border border-[#B8C2CC] rounded-xl h-[58vh] flex flex-col items-start justify-between">
               <span className="text-black text-sm">
                 Trusted by leading crypto brands and startups
               </span>
@@ -218,7 +226,7 @@ function Home() {
           </div>
           <div className="w-full h-[58vh] p-4 border border-[#B8C2CC] rounded-xl flex flex-col items-start justify-between">
             <span className="text-black text-sm">
-              Trusted by leading crypto brands and startups
+              5M+ Organic Reach Across Africa & Beyond
             </span>
             <div className="flex flex-col items-start">
               <span className="text-5xl font-medium">100k+</span>
@@ -227,7 +235,7 @@ function Home() {
           </div>
           <div className="w-full h-[58vh] p-4 border border-[#B8C2CC] rounded-xl flex flex-col items-start justify-between">
             <span className="text-black text-sm">
-              Trusted by leading crypto brands and startups
+              Community of 100k+ Active Crypto & Web3 Followers
             </span>
             <div className="flex flex-col items-start">
               <span className="text-5xl font-medium">5M+</span>

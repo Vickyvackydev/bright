@@ -47,7 +47,7 @@ function Footer() {
             </span>
 
             <a href="mailto:bright.tech86@gmail.com">
-              <span className="text-white font-medium text-3xl sm:text-5xl underline tracking-tighter break-all">
+              <span className="text-white font-medium hover:opacity-50 text-3xl sm:text-5xl underline tracking-tighter break-all">
                 bright.tech86@gmail.com
               </span>
             </a>
@@ -155,9 +155,9 @@ function Footer() {
             }}
             whileTap={{ scale: 0.95 }}
             className="cursor-pointer transition-colors duration-200 hover:text-gray-300"
-            onClick={() => handleScrollToElem("/contact")}
+            onClick={() => navigate("/about-me")}
           >
-            Contact
+            About Me
           </motion.span>
         </motion.div>
       </div>
@@ -179,28 +179,46 @@ function Footer() {
           className="flex items-start flex-col gap-y-8 sm:gap-y-[10rem]"
         >
           <div className="flex items-start  flex-col gap-y-2 text-xs sm:text-sm font-semibold text-white">
-            <a href="https://www.instagram.com/brigaz_afia/#" target="_blank">
+            <a
+              href="https://www.instagram.com/brigaz_afia/#"
+              target="_blank"
+              className="hover:underline"
+            >
               Instagram
             </a>
-            <a href="https://x.com/AfiaBrigaz" target="_blank">
+            <a
+              href="https://x.com/brightafia?s=21"
+              target="_blank"
+              className="hover:underline"
+            >
               x.com
             </a>
             <a
               href="https://www.linkedin.com/in/bright-afia-703481178/"
+              className="hover:underline"
               target="_blank"
             >
               Linkedin
             </a>
-            <a href="https://www.tiktok.com/@brigaz_afia" target="_blank">
+            <a
+              href="https://www.tiktok.com/@brigaz_afia"
+              target="_blank"
+              className="hover:underline"
+            >
               Tiktok
             </a>
             <a
               href="https://www.facebook.com/people/Bright-Emmanuel/100075079857314/"
+              className="hover:underline"
               target="_blank"
             >
               Facebook
             </a>
-            <a href="https://t.me/brightafia" target="_blank">
+            <a
+              href="https://t.me/brightafia"
+              target="_blank"
+              className="hover:underline"
+            >
               Telegram
             </a>
           </div>

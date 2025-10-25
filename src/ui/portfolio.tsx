@@ -18,7 +18,7 @@ const items = [
       { title: "Content Marketing", color: "bg-[#F6EFCD]" },
       { title: "Community Building", color: "bg-[#BEFFAA]" },
     ],
-    category: "Lifestyle",
+    category: "Fashion",
   },
   {
     img: BRIGHT_2_PIC,
@@ -27,19 +27,19 @@ const items = [
       { title: "Social Media & Content", color: "bg-[#FFD4AA]" },
       { title: "Community Building", color: "bg-[#BEFFAA]" },
     ],
-    category: "Lifestyle",
+    category: "Blockchain",
   },
   {
     img: GROUP,
     title: "Myosin",
     tags: [{ title: "Community Building", color: "bg-[#BEFFAA]" }],
-    category: "Lifestyle",
+    category: "Blockchain",
   },
   {
     img: BRIGHT_4_PIC,
     title: "ChainDustry Blockchain Week",
     tags: [{ title: "Event Marketing & Activations", color: "bg-[#AAFFFC]" }],
-    category: "Lifestyle",
+    category: "Blockchain",
   },
   {
     img: BRIGHT_5_PIC,
@@ -48,13 +48,13 @@ const items = [
       { title: "Social Media & Content", color: "bg-[#FFD4AA]" },
       { title: "Community Building", color: "bg-[#BEFFAA]" },
     ],
-    category: "Lifestyle",
+    category: "Fintech/Blockchain",
   },
   {
     img: HERO_IMAGE_5,
     title: "Infinity Exchange",
-    tags: [{ title: "Partnerships & Collaborations", color: "bg-[#FFC4E5]" }],
-    category: "Lifestyle",
+    tags: [{ title: "Ambassador & SpokesPerson", color: "bg-[#FFC4E5]" }],
+    category: "Blockchain",
   },
 ];
 const containerVariants = {
@@ -76,7 +76,7 @@ const itemVariants = {
 };
 function Portfolio() {
   return (
-    <div id="portfolio" className="w-full lg:px-10 px-5 py-20">
+    <div id="portfolio" className="w-full lg:px-10 px-5 pt-20 pb-5">
       <div className="border-t-2 border-[#111112] flex flex-col">
         <span className="text-sm font-semibold text-[#111112] mt-3">
           Portfolio

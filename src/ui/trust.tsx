@@ -7,14 +7,13 @@ import {
   BRIGHTY_2,
   CLOCK,
   GROUP,
-  GROUP_PHOTOS,
   TEXTING,
 } from "../assets";
 import { motion } from "framer-motion";
 
 function Trust() {
   return (
-    <div className="flex flex-col items-center justify-center gap-y-5 w-full px-4 md:px-6 lg:px-10 py-16">
+    <div className="flex flex-col items-center justify-center gap-y-5 w-full px-4 md:px-6 lg:px-10 pb-16 -pt-[5rem]">
       {/* Title Section */}
       <motion.span
         initial={{ opacity: 0, y: 30 }}
@@ -48,13 +47,18 @@ function Trust() {
           viewport={{ once: true }}
           className="flex flex-col gap-4"
         >
-          <div className="relative h-[300px] sm:h-[400px] md:h-[503px]">
+          <div className="relative lg:h-[503px] h-[500px] md:h-[503px]">
             <img
               src={BRIGHT_MIC}
               className="w-full h-full object-cover rounded-2xl"
               alt=""
             />
-            <button className="absolute bottom-6 sm:bottom-11 left-4 sm:left-5 z-20 text-base sm:text-lg text-white flex items-center gap-2">
+            <button
+              onClick={() =>
+                window.open("https://www.instagram.com/brigaz_afia/#", "_blank")
+              }
+              className="absolute hover:-translate-y-3 hover:-rotate-3 transition-all duration-300 bottom-6 sm:bottom-11 left-4 sm:left-5 z-20 text-base sm:text-lg text-white flex items-center gap-2"
+            >
               <span>Check my instagram</span>
               <img
                 src={ARROW_LIGHT}
@@ -64,12 +68,12 @@ function Trust() {
             </button>
           </div>
 
-          <div className="bg-[#88888833] p-5 sm:p-7 rounded-2xl flex flex-col items-start">
-            <img
+          <div className="bg-[#88888833] lg:h-[185px] xl:h-[180px]  p-5 sm:p-7 rounded-2xl flex flex-col items-center justify-center">
+            {/* <img
               src={GROUP_PHOTOS}
               className="w-[180px] sm:w-[229px] h-auto"
               alt=""
-            />
+            /> */}
             <div className="flex items-start gap-x-2 mt-4">
               <span className="text-[#111112] text-3xl sm:text-4xl font-medium">
                 50+
