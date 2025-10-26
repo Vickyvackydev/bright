@@ -7,7 +7,7 @@ import {
   HERO_IMAGE_3,
   HERO_IMAGE_4,
   HERO_IMAGE_5,
-  LINE_BAR,
+  // LINE_BAR,
 } from "../assets";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -48,7 +48,7 @@ function Projects() {
   //     id: 6,
   //     title: "Pvzzle Collection",
   //     img: BRIGHT_1_PIC,
-  //     link: "/puzzle-exchange",
+  //     link: "/puzzle-collection",
   //   },
   // ];
 
@@ -165,22 +165,22 @@ function Projects() {
               "/myosin",
               "/v-traders",
               "/infinity-exchange",
-              "/puzzle-exchange",
+              "/puzzle-collection",
             ];
             navigate(links[mobileIndex]);
           }}
         >
           <div className="absolute inset-0 bg-black/50 z-20 rounded-2xl"></div>
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-y-3 px-6 text-center">
-            <div className="flex items-center gap-x-4">
+            {/* <div className="flex items-center gap-x-4">
               <span className="text-white text-xl font-medium">
-                Oct 9, 2024
+                {["May, 2025", "July, 2025","March, 2025", "Sept, 2025","March 2024","Jan 2023"][mobileIndex]}
               </span>
               <img src={LINE_BAR} className="h-[22px]" alt="" />
               <span className="text-[#FFFFFFB8] text-base">
                 Content Marketing
               </span>
-            </div>
+            </div> */}
             <span className="text-white text-3xl font-semibold leading-tight">
               {
                 [
@@ -231,6 +231,7 @@ function Projects() {
             title: "ChainDustry Blockchain Week 2025",
             img: HERO_IMAGE_1,
             link: "/chain-industry",
+            date: "",
           },
           {
             id: 2,
@@ -255,7 +256,7 @@ function Projects() {
             id: 6,
             title: "Pvzzle Collection",
             img: BRIGHT_1_PIC,
-            link: "/puzzle-exchange",
+            link: "/puzzle-collection",
           },
         ].map((item, index) => (
           <motion.div
@@ -279,7 +280,7 @@ function Projects() {
 
             {/* Text content */}
             <div className="absolute inset-0 z-30 flex flex-col items-start sm:items-center justify-center gap-y-3 px-6 sm:px-10 text-center">
-              <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-10">
+              {/* <div className="flex items-center gap-x-4 sm:gap-x-6 md:gap-x-10">
                 <span className="text-white text-lg sm:text-2xl md:text-3xl font-medium">
                   Oct 9, 2024
                 </span>
@@ -291,7 +292,7 @@ function Projects() {
                 <span className="text-[#FFFFFFB8] text-sm sm:text-base md:text-lg">
                   Content Marketing
                 </span>
-              </div>
+              </div> */}
               <span className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">
                 {item.title}
               </span>

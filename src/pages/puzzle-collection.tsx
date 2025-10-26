@@ -10,7 +10,7 @@ import {
   LINE_BAR,
 } from "../assets";
 
-function PuzzleExchange() {
+function PuzzleCollection() {
   const [activeView, setActiveView] = useState(1);
   return (
     <>
@@ -343,4 +343,4 @@ function PuzzleExchange() {
   );
 }
 
-export default PuzzleExchange;
+export default PuzzleCollection;
