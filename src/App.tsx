@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     if (pathname === "/") {
-      document.title = "Bright - Trades | Home";
+      document.title = "Bright - Growth Marketer | Home";
     } else if (pathname === "/projects") {
       document.title = "Bright | Projects";
     } else if (pathname === "/chain-industry") {
