@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ARTIST, BUTTON, IMOH, OSKA, QUOTE, SIMON } from "../assets";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -51,6 +51,18 @@ function Testimonials() {
   const handleNext = () => {
     setCurrentIndex((prev) => (prev < testimonies.length - 1 ? prev + 1 : 0));
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === testimonies.length - 1 ? 0 : prev + 1
+      );
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [testimonies.length]);
 
   return (
     <div className="w-full px-5 md:px-10 py-20 bg-white overflow-hidden">

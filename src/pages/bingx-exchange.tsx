@@ -100,7 +100,7 @@ function BingXExchange() {
           </span>
           <span className="text-base md:text-lg text-[#4D5153] tracking-tight leading-7 font-medium">
             My role was simple but powerful: share clear trading education,
-            highlight BinX trading competitions, and invite people to sign up
+            highlight BingX trading competitions, and invite people to sign up
             using my referral link.
           </span>
 
@@ -225,12 +225,12 @@ function BingXExchange() {
             <div className="flex items-start flex-col gap-y-5 mt-5">
               <li className="list-disc font-medium text-[#696969] text-lg md:text-xl">
                 <span className="font-bold"> Teach First :</span> I posted
-                explainers about how BinX works, tips for spot and futures
+                explainers about how BingX works, tips for spot and futures
                 trading, and simple risk-management advice.
               </li>
               <li className="list-disc font-medium text-[#696969] text-lg md:text-xl">
                 <span className="font-bold"> Make Competitions Fun:</span>{" "}
-                Whenever BinX launched a trading competition, I shared updates,
+                Whenever BingX launched a trading competition, I shared updates,
                 broke down the rules, and showed members how to get involved—and
                 earn.
               </li>

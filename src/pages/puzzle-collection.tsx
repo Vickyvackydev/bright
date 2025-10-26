@@ -85,7 +85,7 @@ function PuzzleCollection() {
             Overview
           </span>
           <span className="text-base md:text-lg text-[#4D5153] tracking-tight leading-7 font-medium">
-            Puzzle set out to build stronger visibility within Nigeria’s vibrant
+            Pvzzle set out to build stronger visibility within Nigeria’s vibrant
             tech ecosystem. Rather than a typical marketing campaign, i
             partnered with pvzzle collections to merge fashion and technology
             culture, using clothing as a conversation starter.
@@ -103,7 +103,7 @@ function PuzzleCollection() {
                   Engagement
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium border-b border-[#111112]">
-                  Puzzle®
+                  Pvzzle®
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -201,7 +201,7 @@ function PuzzleCollection() {
               outreach must feel organic, not purely promotional.
             </li>
             <li>
-              Lifestyle Integration – We wanted Puzzle to be experienced, not
+              Lifestyle Integration – We wanted Pvzzle to be experienced, not
               just seen.
             </li>
           </ul>
@@ -291,7 +291,7 @@ function PuzzleCollection() {
           <div className="flex flex-col gap-y-2">
             <span className="text-xl font-medium text-[#575757]">Results</span>
             <ul className="list-disc pl-6 text-base text-gray-800 space-y-4">
-              <li>80% increase in Puzzle’s social media presence.</li>
+              <li>80% increase in Pvzzle’s social media presence.</li>
               <li>
                 Significant boost in brand recognition within Nigeria and
                 outside Nigeria.

@@ -270,9 +270,9 @@ function ChainIndustry() {
             blockchain-inspired graphics and vibrant, futuristic lighting
             schemes. <br /> Audience Engagement: Deployed teaser videos and
             content across X Twitter, TikTok, Instagram, and LinkedIn, tailored
-            for Nigeria’s blockchain audience On-site Experience : Designed a
-            stage layout optimized for keynote speeches, panel discussions, and
-            live streaming.
+            for Nigeria’s blockchain audience. <br /> On-site Experience :
+            Designed a stage layout optimized for keynote speeches, panel
+            discussions, and live streaming.
           </span>
         </motion.div>
         <motion.div
@@ -345,8 +345,7 @@ function ChainIndustry() {
                 <br /> event highlights. 
               </li>
               <li className="leading-6">
-                Social engagement up 60% during the three-week campaign <br />{" "}
-                window.
+                Social engagement up 60% during the three-week campaign.
               </li>
               <li>Positive feedback from speakers and participants</li>
             </ul>

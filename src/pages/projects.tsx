@@ -185,7 +185,7 @@ function Projects() {
               {
                 [
                   "ChainDustry Blockchain Week 2025",
-                  "BingX Exchange",
+                  "BingX",
                   "Myosin",
                   "vTrader Global & vTrader Africa",
                   "Infinity Exchange",

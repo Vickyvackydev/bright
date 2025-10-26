@@ -69,7 +69,7 @@ function MoreProjects() {
               </span>
             </div> */}
             <span className="text-white text-3xl sm:text-5xl font-medium">
-              BinX Exchange
+              BingX
             </span>
           </motion.div>
         </motion.div>

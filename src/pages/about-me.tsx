@@ -13,10 +13,10 @@ function AboutMe() {
         <div className="flex items-center gap-3">
           <img
             src={BRIGHT__}
-            className="w-[125.52px] rounded-full h-[125.52px]"
+            className="lg:w-[125.52px] w-[65px] rounded-full lg:h-[125.52px] h-[65px]"
             alt=""
           />
-          <span className="text-[34.12px] font-semibold text-[#222222]">
+          <span className="lg:text-[34.12px] text-lg font-semibold text-[#222222]">
             Hi 👋,
           </span>
         </div>
