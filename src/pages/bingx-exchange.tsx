@@ -94,7 +94,7 @@ function BingXExchange() {
             Overview
           </span>
           <span className="text-base md:text-lg text-[#4D5153] tracking-tight leading-7 font-medium">
-            BinX wanted to connect with everyday Nigerian crypto traders—not
+            BingX wanted to connect with everyday Nigerian crypto traders—not
             just ads. I already run a lively Telegram group of about 7,000
             crypto enthusiasts, so we teamed up.
           </span>

@@ -226,7 +226,7 @@ function Home() {
           </div>
           <div className="w-full h-[58vh] p-4 border border-[#B8C2CC] rounded-xl flex flex-col items-start justify-between">
             <span className="text-black text-sm">
-              5M+ Organic Reach Across Africa & Beyond
+              Community of 100k+ Active Crypto & Web3 Followers
             </span>
             <div className="flex flex-col items-start">
               <span className="text-5xl font-medium">100k+</span>
@@ -235,7 +235,7 @@ function Home() {
           </div>
           <div className="w-full h-[58vh] p-4 border border-[#B8C2CC] rounded-xl flex flex-col items-start justify-between">
             <span className="text-black text-sm">
-              Community of 100k+ Active Crypto & Web3 Followers
+              5M+ Organic Reach Across Africa & Beyond
             </span>
             <div className="flex flex-col items-start">
               <span className="text-5xl font-medium">5M+</span>

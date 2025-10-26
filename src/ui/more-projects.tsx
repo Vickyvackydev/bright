@@ -1,4 +1,4 @@
-import { HERO_IMAGE_4, HERO_IMAGE_2, LINE_BAR } from "../assets";
+import { HERO_IMAGE_4, HERO_IMAGE_2 } from "../assets";
 import { GO_BACK } from "../assets";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -59,7 +59,7 @@ function MoreProjects() {
             viewport={{ once: true }}
             className="absolute inset-0 z-30 flex flex-col items-start gap-y-2 justify-end p-6 sm:p-10 md:p-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
           >
-            <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-10 mb-2">
+            {/* <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-10 mb-2">
               <span className="text-white text-xl sm:text-3xl font-medium">
                 Oct 9, 2024
               </span>
@@ -67,7 +67,7 @@ function MoreProjects() {
               <span className="text-[#FFFFFFB8] text-sm sm:text-lg">
                 Crypto • Trading
               </span>
-            </div>
+            </div> */}
             <span className="text-white text-3xl sm:text-5xl font-medium">
               BinX Exchange
             </span>
@@ -101,7 +101,7 @@ function MoreProjects() {
             className="absolute inset-0 cursor-pointer z-30 flex flex-col items-start gap-y-2 justify-end p-6 sm:p-10 md:p-20 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
             onClick={() => navigate("/v-traders")}
           >
-            <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-10 mb-2">
+            {/* <div className="flex flex-wrap items-center gap-x-6 sm:gap-x-10 mb-2">
               <span className="text-white text-xl sm:text-3xl font-medium">
                 Oct 9, 2024
               </span>
@@ -109,7 +109,7 @@ function MoreProjects() {
               <span className="text-[#FFFFFFB8] text-sm sm:text-lg">
                 Crypto • Trading
               </span>
-            </div>
+            </div> */}
             <span className="text-white text-3xl sm:text-5xl font-medium">
               vTrader Global & vTrader Africa
             </span>

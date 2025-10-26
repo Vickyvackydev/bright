@@ -117,7 +117,7 @@ function ChainIndustry() {
                   Type
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  Event Campaign
+                  Marketing
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">
@@ -125,7 +125,7 @@ function ChainIndustry() {
                   Category
                 </span>
                 <span className="text-sm md:text-base text-[#111112] font-medium ">
-                  Web3
+                  Event Campaign
                 </span>
               </div>
               <div className="w-full flex items-center justify-between pb-4 border-b">

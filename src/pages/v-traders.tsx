@@ -127,7 +127,7 @@ function VTraders() {
                 <span className="text-base md:text-lg font-medium text-black">
                   Category
                 </span>
-                <span className="text-sm md:text-base text-[#111112] font-medium ">
+                <span className="text-sm text-end md:text-base text-[#111112] font-medium ">
                   Social Media • Event Activation • Global Community Growth
                 </span>
               </div>
