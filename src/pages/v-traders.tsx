@@ -200,14 +200,17 @@ function VTraders() {
           className="flex flex-col px-5 gap-y-5 w-full xl:w-[60%] font-geist"
         >
           <ul className="list-disc list-outside space-y-2 text-base md:text-lg text-[#4D5153]">
-            <li>Engagement jumped on both the Africa and Global accounts.</li>
             <li>
-              The Lagos event sparked fresh sign-ups, product feedback and got
-              vTrader mentioned across local trading circles.
+              New Market, Big Expectations – vTrader was known internationally
+              but needed trust and recognition on the ground in Nigeria.
             </li>
             <li>
-              People loved the merch—it showed up in social posts and kept the
-              conversation going long after the event.
+              Different Audiences, One Brand – We had to keep the global voice
+              consistent while making content feel local.
+            </li>
+            <li>
+              More Than Online – People needed to experience vTrader in person,
+              not just see posts.
             </li>
           </ul>
           <motion.div
