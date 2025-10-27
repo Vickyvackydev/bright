@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ARTIST, BUTTON, IMOH, OSKA, PUZZLE_, QUOTE, SIMON } from "../assets";
+import { BUTTON, IMOH, OSKA, PUZZLE_, QUOTE, SIMON } from "../assets";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonies = [
