@@ -93,5 +93,6 @@ export { default as SIMON } from "./images/simo.jpg";
 export { default as OSKA } from "./images/oska.jpg";
 export { default as IMOH } from "./images/imoh.jpg";
 export { default as BRIGHT__ } from "./images/bright--.jpg";
+export { default as PUZZLE_ } from "./images/puzzle.jpg";
 
 // new sets ends here

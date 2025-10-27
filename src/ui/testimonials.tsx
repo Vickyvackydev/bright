@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ARTIST, BUTTON, IMOH, OSKA, QUOTE, SIMON } from "../assets";
+import { ARTIST, BUTTON, IMOH, OSKA, PUZZLE_, QUOTE, SIMON } from "../assets";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonies = [
@@ -28,7 +28,7 @@ const testimonies = [
   },
   {
     name: "Israel Silas",
-    img: ARTIST,
+    img: PUZZLE_,
     role: "C.E.O - Pvzzle Collections",
     heading: "Working with Bright has been an absolute pleasure.",
     content:
