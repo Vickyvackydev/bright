@@ -22,7 +22,7 @@ function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
         src={BRIGHT}
         className="max-w-full lg:max-w-[70%] 2xl:max-w-[60%] lg:mt-[22rem] mt-[12rem] lg:h-auto h-screen lg:object-contain object-cover"
-        alt="Bright"
+        alt="Bright Emmanuel Afia - Growth Marketer"
       />
 
       {/* Overlay Content */}

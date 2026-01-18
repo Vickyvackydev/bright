@@ -144,8 +144,16 @@ function Portfolio() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                   />
                   <div className="flex items-center justify-between bottom-4 px-5 w-full absolute">
-                    <img src={BOTTOM_1} className="w-[13px] h-[13px]" alt="" />
-                    <img src={BOTTOM_2} className="w-[13px] h-[13px]" alt="" />
+                    <img
+                      src={BOTTOM_1}
+                      className="w-[13px] h-[13px]"
+                      alt="Corner icon left"
+                    />
+                    <img
+                      src={BOTTOM_2}
+                      className="w-[13px] h-[13px]"
+                      alt="Corner icon right"
+                    />
                   </div>
                 </motion.div>
 

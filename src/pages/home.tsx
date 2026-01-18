@@ -129,7 +129,7 @@ function renderToolsRow() {
         <img
           key={key}
           src={tool}
-          alt=""
+          alt={`${tools[key]?.split("/").pop()?.split(".")[0] || "Tool"} logo`}
           className="shrink-0 opacity-70 hover:opacity-100 transition-opacity w-[75px] h-[54px] object-contain"
         />
       ))}
@@ -146,7 +146,7 @@ function Home() {
         <motion.img
           src={MEASURE_MASK}
           className="w-full h-full"
-          alt=""
+          alt="Bright Emmanuel Afia - Background Graphic"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -163,12 +163,12 @@ function Home() {
           className="w-full lg:px-10 px-5 flex flex-col items-start lg:mt-16 mt-8"
         >
           <div className="w-full flex lg:flex-row flex-col lg:items-center items-start justify-between">
-            <img src={STAR} className="w-[30px] h-[30px]" alt="" />
+            <img src={STAR} className="w-[30px] h-[30px]" alt="Star icon" />
             <div className="flex lg:items-start items-center gap-x-2 lg:mt-0 mt-5">
               <img
                 src={QUOTE}
                 className="w-[30px] h-[30px] lg:mt-3 mt-0"
-                alt=""
+                alt="Quote icon"
               />
               <span className="text-[#111112] lg:text-[52px] text-2xl font-medium tracking-tighter">
                 I don’t just market projects.
