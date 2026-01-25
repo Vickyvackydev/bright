@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 interface SEOProps {
   title?: string;
@@ -12,6 +12,8 @@ interface SEOProps {
   twitterDescription?: string;
   twitterImage?: string;
   canonical?: string;
+  type?: string;
+  name?: string;
 }
 
 const SEO = ({
@@ -26,106 +28,51 @@ const SEO = ({
   twitterDescription,
   twitterImage,
   canonical,
+  type = "website",
+  name = "Bright Emmanuel Afia",
 }: SEOProps) => {
-  useEffect(() => {
-    // Update title
-    if (title) {
-      document.title = title;
-    }
+  return (
+    <Helmet>
+      {/* Standard metadata tags */}
+      {title && <title>{title}</title>}
+      {description && <meta name="description" content={description} />}
+      {keywords && <meta name="keywords" content={keywords} />}
+      {canonical && <link rel="canonical" href={canonical} />}
 
-    // Update Meta Description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription && description) {
-      metaDescription.setAttribute("content", description);
-    }
+      {/* Opengraph tags */}
+      {ogTitle || title ? (
+        <meta property="og:title" content={ogTitle || title} />
+      ) : null}
+      {ogDescription || description ? (
+        <meta
+          property="og:description"
+          content={ogDescription || description}
+        />
+      ) : null}
+      {ogImage ? <meta property="og:image" content={ogImage} /> : null}
+      {ogUrl || canonical ? (
+        <meta property="og:url" content={ogUrl || canonical} />
+      ) : null}
+      <meta property="og:type" content={type} />
+      <meta property="og:site_name" content={name} />
 
-    // Update Meta Keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords && keywords) {
-      metaKeywords.setAttribute("content", keywords);
-    }
-
-    // Update Canonical URL
-    let linkCanonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      if (!linkCanonical) {
-        linkCanonical = document.createElement("link");
-        linkCanonical.setAttribute("rel", "canonical");
-        document.head.appendChild(linkCanonical);
-      }
-      linkCanonical.setAttribute("href", canonical);
-    }
-
-    // Update OG Title
-    const metaOgTitle = document.querySelector('meta[property="og:title"]');
-    if (metaOgTitle && (ogTitle || title)) {
-      metaOgTitle.setAttribute("content", ogTitle || title || "");
-    }
-
-    // Update OG Description
-    const metaOgDescription = document.querySelector(
-      'meta[property="og:description"]',
-    );
-    if (metaOgDescription && (ogDescription || description)) {
-      metaOgDescription.setAttribute(
-        "content",
-        ogDescription || description || "",
-      );
-    }
-
-    // Update OG Image
-    const metaOgImage = document.querySelector('meta[property="og:image"]');
-    if (metaOgImage && ogImage) {
-      metaOgImage.setAttribute("content", ogImage);
-    }
-
-    // Update OG URL
-    const metaOgUrl = document.querySelector('meta[property="og:url"]');
-    if (metaOgUrl && (ogUrl || canonical)) {
-      metaOgUrl.setAttribute("content", ogUrl || canonical || "");
-    }
-
-    // Update Twitter Title
-    const metaTwitterTitle = document.querySelector(
-      'meta[name="twitter:title"]',
-    );
-    if (metaTwitterTitle && (twitterTitle || title)) {
-      metaTwitterTitle.setAttribute("content", twitterTitle || title || "");
-    }
-
-    // Update Twitter Description
-    const metaTwitterDescription = document.querySelector(
-      'meta[name="twitter:description"]',
-    );
-    if (metaTwitterDescription && (twitterDescription || description)) {
-      metaTwitterDescription.setAttribute(
-        "content",
-        twitterDescription || description || "",
-      );
-    }
-
-    // Update Twitter Image
-    const metaTwitterImage = document.querySelector(
-      'meta[name="twitter:image"]',
-    );
-    if (metaTwitterImage && (twitterImage || ogImage)) {
-      metaTwitterImage.setAttribute("content", twitterImage || ogImage || "");
-    }
-  }, [
-    title,
-    description,
-    keywords,
-    ogTitle,
-    ogDescription,
-    ogImage,
-    ogUrl,
-    twitterTitle,
-    twitterDescription,
-    twitterImage,
-    canonical,
-  ]);
-
-  return null;
+      {/* Twitter tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={name} />
+      {twitterTitle || title ? (
+        <meta name="twitter:title" content={twitterTitle || title} />
+      ) : null}
+      {twitterDescription || description ? (
+        <meta
+          name="twitter:description"
+          content={twitterDescription || description}
+        />
+      ) : null}
+      {twitterImage || ogImage ? (
+        <meta name="twitter:image" content={twitterImage || ogImage} />
+      ) : null}
+    </Helmet>
+  );
 };
 
 export default SEO;
