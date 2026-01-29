@@ -14,6 +14,7 @@ interface SEOProps {
   canonical?: string;
   type?: string;
   name?: string;
+  noindex?: boolean;
 }
 
 const SEO = ({
@@ -28,6 +29,7 @@ const SEO = ({
   twitterDescription,
   twitterImage,
   canonical,
+  noindex,
   type = "website",
   name = "Bright Emmanuel Afia",
 }: SEOProps) => {
@@ -38,6 +40,7 @@ const SEO = ({
       {description && <meta name="description" content={description} />}
       {keywords && <meta name="keywords" content={keywords} />}
       {canonical && <link rel="canonical" href={canonical} />}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
       {/* Opengraph tags */}
       {ogTitle || title ? (

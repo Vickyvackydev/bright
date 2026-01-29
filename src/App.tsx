@@ -17,6 +17,7 @@ import VTraders from "./pages/v-traders";
 import Myosin from "./pages/myosin";
 import AboutMe from "./pages/about-me";
 import PuzzleCollection from "./pages/puzzle-collection";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const location = useLocation();
@@ -83,7 +84,24 @@ function App() {
           description: "Portfolio work for BingX Exchange.",
         };
       default:
-        return { title: baseTitle, description: baseDescription };
+        // Handle routes that don't match any of the above
+        const isKnownRoute = [
+          "/",
+          "/projects",
+          "/chain-industry",
+          "/infinity-exchange",
+          "/puzzle-collection",
+          "/v-traders",
+          "/myosin",
+          "/about-me",
+          "/bingx-exchange",
+        ].includes(pathname);
+
+        return {
+          title: isKnownRoute ? baseTitle : `${baseTitle} | Page Not Found`,
+          description: isKnownRoute ? baseDescription : "Page not found.",
+          noindex: !isKnownRoute,
+        };
     }
   };
 
@@ -106,6 +124,7 @@ function App() {
         description={seoData.description}
         canonical={`https://www.brightemmanuel.com${pathname}`}
         ogUrl={`https://www.brightemmanuel.com${pathname}`}
+        noindex={seoData.noindex}
       />
       <SchemaData
         type="Person"
@@ -132,6 +151,7 @@ function App() {
           <Route path="/v-traders" element={<VTraders />} />
           <Route path="/myosin" element={<Myosin />} />
           <Route path="/about-me" element={<AboutMe />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </AnimatePresence>
