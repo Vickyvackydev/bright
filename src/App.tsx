@@ -37,51 +37,67 @@ function App() {
     const baseTitle = "Bright - Growth Marketer";
     const baseDescription =
       "Bright Emmanuel Afia is a Lagos-based creative expert in storytelling, video content, and marketing—helping brands connect and grow across Africa.";
+    const baseKeywords =
+      "Growth Marketer, Creative Director, Storytelling, Video Content, Marketing, Africa, Lagos, Crypto, Web3, Blockchain";
 
     switch (pathname) {
       case "/":
-        return { title: `${baseTitle} | Home`, description: baseDescription };
+        return {
+          title: baseTitle,
+          description: baseDescription,
+          keywords: baseKeywords,
+        };
       case "/projects":
         return {
           title: `Bright | Projects`,
           description:
             "Explore the various projects and creative works by Bright Emmanuel Afia.",
+          keywords:
+            "Projects, Portfolio, Creative Works, Case Studies, Bright Emmanuel Afia",
         };
       case "/chain-industry":
         return {
           title: `Bright | Chain - Industry`,
           description: "Portfolio work for Chain Industry.",
+          keywords: "Chain Industry, Blockchain, Portfolio, Marketing",
         };
       case "/infinity-exchange":
         return {
           title: `Bright | Infinity - Exchange`,
           description: "Portfolio work for Infinity Exchange.",
+          keywords: "Infinity Exchange, Crypto Exchange, Portfolio, Marketing",
         };
       case "/puzzle-collection":
         return {
           title: `Bright | Puzzle - Collection`,
           description: "A collection of creative puzzles and designs.",
+          keywords: "Puzzle Collection, Design, Creative, Art",
         };
       case "/v-traders":
         return {
           title: `Bright | V - Traders`,
           description: "Portfolio work for V-Traders.",
+          keywords: "V-Traders, Trading, Portfolio, Marketing",
         };
       case "/myosin":
         return {
           title: `Bright | Myosin`,
           description: "Portfolio work for Myosin.",
+          keywords: "Myosin, Portfolio, Marketing, Growth",
         };
       case "/about-me":
         return {
           title: `Bright | About - Me`,
           description:
             "Learn more about Bright Emmanuel Afia, his journey, and his expertise.",
+          keywords:
+            "About Me, Biography, Experience, Skills, Bright Emmanuel Afia",
         };
       case "/bingx-exchange":
         return {
           title: `Bright | BingX - Exchange`,
           description: "Portfolio work for BingX Exchange.",
+          keywords: "BingX, Exchange, Crypto, Portfolio, Marketing",
         };
       default:
         // Handle routes that don't match any of the above
@@ -100,6 +116,7 @@ function App() {
         return {
           title: isKnownRoute ? baseTitle : `${baseTitle} | Page Not Found`,
           description: isKnownRoute ? baseDescription : "Page not found.",
+          keywords: baseKeywords,
           noindex: !isKnownRoute,
         };
     }
@@ -122,6 +139,7 @@ function App() {
       <SEO
         title={seoData.title}
         description={seoData.description}
+        keywords={seoData.keywords}
         canonical={`https://www.brightemmanuel.com${pathname}`}
         ogUrl={`https://www.brightemmanuel.com${pathname}`}
         noindex={seoData.noindex}
